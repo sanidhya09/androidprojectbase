@@ -3,7 +3,7 @@ package com.base.core;
 import android.app.Application;
 
 import com.base.network.RestService;
-import com.base.utils.FitFixConfig;
+import com.base.utils.AppConfig;
 
 import java.io.IOException;
 
@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by sanidhya on 3/5/16.
  */
-public class FitFixApplication extends Application {
+public class AppApplication extends Application {
     private Retrofit retrofit;
 
     @Override
@@ -46,7 +46,7 @@ public class FitFixApplication extends Application {
             }
         }).build();
         retrofit = new Retrofit.Builder()
-                .baseUrl(FitFixConfig.BASE_URL)
+                .baseUrl(AppConfig.BASE_URL)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

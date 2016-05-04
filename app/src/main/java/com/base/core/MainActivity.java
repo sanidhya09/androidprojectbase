@@ -74,9 +74,9 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
         mDrawerLayout.addDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();
 
-        FitFixApplication fitFixApplication = (FitFixApplication) getApplication();
+        AppApplication appApplication = (AppApplication) getApplication();
 
-        Call<List<Contributor>> call = fitFixApplication.getRestService().contributors("square", "retrofit");
+        Call<List<Contributor>> call = appApplication.getRestService().contributors("square", "retrofit");
 
         call.enqueue(new Callback<List<Contributor>>() {
             @Override
