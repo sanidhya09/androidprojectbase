@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true"
+    android:interpolator="@android:interpolator/overshoot">
+
+    <scale
+        android:duration="800"
+        android:fromXScale="2"
+        android:fromYScale="2"
+        android:pivotX="43%"
+        android:pivotY="43%"
+        android:toXScale="1.1"
+        android:toYScale="1.1" />
+
+    <alpha
+        android:duration="800"
+        android:fromAlpha="0"
+        android:toAlpha="1" />
+
+</set>

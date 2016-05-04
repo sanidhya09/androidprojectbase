@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    >
+
+    <com.base.utils.CustomTextView
+        android:id="@+id/splash_text_line_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/splash_text_line_2"
+        android:layout_centerHorizontal="true"
+        android:text="This is the Text 1 at splash screen"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:font_name="medium"
+        />
+
+    <com.base.utils.CustomTextView
+        android:id="@+id/splash_text_line_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:text="This is the Text 2"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        app:font_name="regular"
+         />
+
+</RelativeLayout>
