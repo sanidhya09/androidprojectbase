@@ -97,33 +97,6 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
 
             }
         });
-
-//        Observable.just("hii").map(new Func1<String, Contributor>() {
-//            public Contributor baseModel;
-//
-//            @Override
-//            public Contributor call(String regID) {
-//
-//                return baseModel;
-//            }
-//
-//        }).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Contributor>() {
-//            @Override
-//            public void onCompleted() {
-//
-//            }
-//
-//            @Override
-//            public void onError(Throwable e) {
-//                e.printStackTrace();
-//            }
-//
-//            @Override
-//            public void onNext(Contributor baseModel) {
-//
-//            }
-//        });
-
     }
 
     @Override

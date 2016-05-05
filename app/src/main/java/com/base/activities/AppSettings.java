@@ -10,14 +10,22 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.base.R;
 import com.base.core.BaseActivity;
+import com.base.models.Contributor;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+
+import rx.Observable;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 public class AppSettings extends BaseActivity {
 
@@ -38,6 +46,33 @@ public class AppSettings extends BaseActivity {
         } else {
             // getLocation(context);
         }
+
+        // Rx implementation
+        Observable.just("Reg ID").map(new Func1<String, Contributor>() {
+            public Contributor baseModel;
+
+            @Override
+            public Contributor call(String regID) {
+                Log.i("1", "This is thread");
+                return baseModel;
+            }
+
+        }).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Contributor>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onNext(Contributor baseModel) {
+
+            }
+        });
     }
 
 
@@ -81,8 +116,8 @@ public class AppSettings extends BaseActivity {
     private boolean checkPlayServices() {
         GoogleApiAvailability googleAPI = GoogleApiAvailability.getInstance();
         int result = googleAPI.isGooglePlayServicesAvailable(this);
-        if(result != ConnectionResult.SUCCESS) {
-            if(googleAPI.isUserResolvableError(result)) {
+        if (result != ConnectionResult.SUCCESS) {
+            if (googleAPI.isUserResolvableError(result)) {
                 googleAPI.getErrorDialog(this, result,
                         PLAY_SERVICES_RESOLUTION_REQUEST).show();
             }
