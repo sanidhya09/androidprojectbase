@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 
 import com.base.R;
 import com.base.activities.AppSettings;
+import com.base.activities.LocationActivity;
 import com.base.adapters.NavigationDrawerAdapter;
 import com.base.models.Contributor;
 
@@ -142,6 +143,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
             return true;
         }
         if (id == R.id.action_favorite) {
+            startActivity(new Intent(MainActivity.this, LocationActivity.class));
             Snackbar.make(this.getWindow().getDecorView().findViewById(android.R.id.content), "Reloading...", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
             return true;

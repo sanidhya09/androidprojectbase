@@ -51,6 +51,10 @@
     </compatible-screens>
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <permission-group android:name="android.permission-group.LOCATION" />
 
     <application
         android:name=".core.AppApplication"
@@ -64,7 +68,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="adjustPan">
-        <activity android:name="com.base.core.MainActivity"></activity>
+        <activity android:name="com.base.core.MainActivity" />
         <activity android:name="com.base.core.BaseActivity" />
         <activity android:name="com.base.core.SplashActivity">
             <intent-filter>
@@ -83,7 +87,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name="com.base.activities.AppSettings"></activity>
+        <activity android:name="com.base.activities.AppSettings" />
+        <activity android:name="com.base.activities.LocationActivity" />
     </application>
 
 </manifest>
