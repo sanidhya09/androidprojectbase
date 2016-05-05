@@ -6,7 +6,9 @@ What's this?
 ----
 
 This project includes ready to start development for an Android app. 
+
 It includes:
+
 1. Retrofit 2.0.2 with sample implementation for your rest calls.
 2. RX java sample implementation.
 3. Toolbar and Navigation drawer with RecyclerView.
