@@ -5,14 +5,15 @@ Android Project Base
 What's this?
 ----
 
-This project includes ready to start development for an Android app. 
+It is a ready to start development for an Android app project structure. 
 
 It includes:
 
 1. Retrofit 2.0.2 with sample implementation for your rest calls.
-2. RX java sample implementation.
-3. Toolbar and Navigation drawer with RecyclerView.
-4. Custom fonts class with its implementation in XML file.
+2. Dagger 2 based Dependency Injection with sample UtilitySingleton implemntation.
+3. RX java sample implementation.
+4. Toolbar and Navigation drawer with RecyclerView.
+5. Custom fonts class with its implementation in XML file.
 
 How to use
 ----
