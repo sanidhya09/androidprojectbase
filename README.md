@@ -1,2 +1,2 @@
-# androidprojectbase
-Android project base with Retrofit, RX java and Toolbar, Navigation drawer, Custom fonts etc
+# Android Project Base
+This empty project includes ready to start development of an Android app. It includes Retrofit 2.0.2, RX java, Toolbar, Navigation drawer with RecyclerView, Custom fonts etc
