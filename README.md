@@ -14,6 +14,7 @@ It includes:
 3. RX java sample implementation.
 4. Toolbar and Navigation drawer with RecyclerView.
 5. Custom fonts class with its implementation in XML file.
+6. LocationActivity based on fused location for getting current locations.
 
 How to use
 ----
