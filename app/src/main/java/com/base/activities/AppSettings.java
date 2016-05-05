@@ -16,6 +16,7 @@ public class AppSettings extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_settings);
         setUpToolBar();
+        utilitySingleton.ShowToast("Showing toast via dependency.");
     }
 
     private void setUpToolBar() {

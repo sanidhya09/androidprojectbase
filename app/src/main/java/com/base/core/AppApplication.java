@@ -2,6 +2,9 @@ package com.base.core;
 
 import android.app.Application;
 
+import com.base.dependencyinjection.DaggerDiComponent;
+import com.base.dependencyinjection.DiComponent;
+import com.base.dependencyinjection.DiModule;
 import com.base.network.RestService;
 import com.base.utils.AppConfig;
 
@@ -20,10 +23,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class AppApplication extends Application {
     private Retrofit retrofit;
+    public DiComponent diComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        diComponent = DaggerDiComponent.builder().diModule(new DiModule()).build();
     }
 
     public Retrofit getRetrofit() {
