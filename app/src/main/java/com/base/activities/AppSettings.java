@@ -29,7 +29,6 @@ import rx.schedulers.Schedulers;
 
 public class AppSettings extends BaseActivity {
 
-    private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 1000;
     private static final int REQUEST_CODE_LOCATION = 101;
 
     @Override
@@ -108,24 +107,6 @@ public class AppSettings extends BaseActivity {
 
                 break;
         }
-    }
-
-    /**
-     * Method to verify google play services on the device
-     */
-    private boolean checkPlayServices() {
-        GoogleApiAvailability googleAPI = GoogleApiAvailability.getInstance();
-        int result = googleAPI.isGooglePlayServicesAvailable(this);
-        if (result != ConnectionResult.SUCCESS) {
-            if (googleAPI.isUserResolvableError(result)) {
-                googleAPI.getErrorDialog(this, result,
-                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
-            }
-
-            return false;
-        }
-
-        return true;
     }
 
 }

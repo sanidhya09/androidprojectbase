@@ -9,6 +9,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -89,5 +92,21 @@ public class UtilitySingleton {
             return false;
         }
     }
+    /**
+     * Method to verify google play services on the device
+     */
+    public boolean checkPlayServices(Activity context, int PLAY_SERVICES_RESOLUTION_REQUEST) {
+        GoogleApiAvailability googleAPI = GoogleApiAvailability.getInstance();
+        int result = googleAPI.isGooglePlayServicesAvailable(context);
+        if (result != ConnectionResult.SUCCESS) {
+            if (googleAPI.isUserResolvableError(result)) {
+                googleAPI.getErrorDialog(context, result,
+                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
+            }
 
+            return false;
+        }
+
+        return true;
+    }
 }

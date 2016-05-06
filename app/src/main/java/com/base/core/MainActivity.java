@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.base.R;
 import com.base.activities.AppSettings;
@@ -103,6 +106,19 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        MenuItem item = menu.findItem(R.id.action_favorite);
+        MenuItemCompat.setActionView(item, R.layout.feed_update_count);
+        RelativeLayout relativeLayout = (RelativeLayout) MenuItemCompat.getActionView(item);
+        TextView notificationCount = (TextView) relativeLayout.findViewById(R.id.notification_count);
+        notificationCount.setText(String.valueOf(5));
+        relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LocationActivity.class));
+                Snackbar.make(v, "Reloading...", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         return true;
     }
 
@@ -116,9 +132,6 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
             return true;
         }
         if (id == R.id.action_favorite) {
-            startActivity(new Intent(MainActivity.this, LocationActivity.class));
-            Snackbar.make(this.getWindow().getDecorView().findViewById(android.R.id.content), "Reloading...", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
             return true;
         }
         return super.onOptionsItemSelected(item);

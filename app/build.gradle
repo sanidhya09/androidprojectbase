@@ -2,20 +2,25 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId "com.base"
-        minSdkVersion 15
-        targetSdkVersion 23
+        minSdkVersion Integer.parseInt(project.ANDROID_BUILD_MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            buildConfigField 'boolean', 'RELEASE', 'true'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField 'boolean', 'RELEASE', 'false'
         }
     }
 }
@@ -33,6 +38,6 @@ dependencies {
     compile 'com.google.dagger:dagger:2.0'
     apt 'com.google.dagger:dagger-compiler:2.0'
     compile 'javax.annotation:javax.annotation-api:1.2'
-    compile 'com.google.android.gms:play-services-location:8.4.0'
+    compile "com.google.android.gms:play-services-location:${android_google_lib_version}"
 
 }
