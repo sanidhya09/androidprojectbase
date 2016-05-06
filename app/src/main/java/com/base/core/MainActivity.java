@@ -2,7 +2,10 @@ package com.base.core;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -23,6 +26,7 @@ import com.base.R;
 import com.base.activities.AppSettings;
 import com.base.activities.LocationActivity;
 import com.base.adapters.NavigationDrawerAdapter;
+import com.base.fragments.FragmentA;
 import com.base.models.Contributor;
 
 import java.util.Arrays;
@@ -79,7 +83,6 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
         mDrawerToggle.syncState();
 
         AppApplication appApplication = (AppApplication) getApplication();
-
         Call<List<Contributor>> call = appApplication.getRestService().contributors("square", "retrofit");
 
         call.enqueue(new Callback<List<Contributor>>() {
@@ -131,7 +134,8 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
 
             return true;
         }
-        if (id == R.id.action_favorite) {
+        if (id == R.id.action_exit) {
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -146,6 +150,8 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
     @Override
     public void onItemClick(int position) {
         mDrawerLayout.closeDrawer(Gravity.LEFT);
+        FragmentA fragmentA = new FragmentA();
+        loadRootFragment(fragmentA);
     }
 
     @Override
@@ -156,4 +162,23 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
         }
         super.onBackPressed();
     }
+
+    private void loadRootFragment(Fragment fragment) {
+        loadRootFragment(fragment, null);
+    }
+
+    private void loadRootFragment(Fragment fragment, Bundle bundle) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        if (bundle != null) {
+            fragment.setArguments(bundle);
+        }
+        fragmentManager.beginTransaction().replace(R.id.container, fragment).commitAllowingStateLoss();
+
+        clearBackStack();
+    }
+
+    public void clearBackStack() {
+        getSupportFragmentManager().popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+    }
+
 }
