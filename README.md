@@ -10,7 +10,7 @@ It is a ready to start development for an Android app project structure.
 It includes:
 
 1. Retrofit 2.0.2 with sample implementation for your rest calls.
-2. Dagger 2 based Dependency Injection with sample UtilitySingleton implemntation.
+2. Dagger 2 based Dependency Injection with sample UtilitySingleton implementation.
 3. RX java sample implementation.
 4. Toolbar and Navigation drawer with RecyclerView.
 5. Custom fonts class with its implementation in XML file.

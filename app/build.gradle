@@ -39,5 +39,6 @@ dependencies {
     apt 'com.google.dagger:dagger-compiler:2.0'
     compile 'javax.annotation:javax.annotation-api:1.2'
     compile "com.google.android.gms:play-services-location:${android_google_lib_version}"
-
+    compile "com.google.android.gms:play-services-gcm:${android_google_lib_version}"
 }
+apply plugin: 'com.google.gms.google-services'

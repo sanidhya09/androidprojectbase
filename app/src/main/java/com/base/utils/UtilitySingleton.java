@@ -95,13 +95,13 @@ public class UtilitySingleton {
     /**
      * Method to verify google play services on the device
      */
-    public boolean checkPlayServices(Activity context, int PLAY_SERVICES_RESOLUTION_REQUEST) {
+    public boolean checkPlayServices(Activity context) {
         GoogleApiAvailability googleAPI = GoogleApiAvailability.getInstance();
         int result = googleAPI.isGooglePlayServicesAvailable(context);
         if (result != ConnectionResult.SUCCESS) {
             if (googleAPI.isUserResolvableError(result)) {
                 googleAPI.getErrorDialog(context, result,
-                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
+                        1000).show();
             }
 
             return false;

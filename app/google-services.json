@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "194607160371",
+    "project_id": "projectbase-dadc7"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194607160371:android:6953ee93d6101b16",
+        "android_client_info": {
+          "package_name": "com.base"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC86pZJ8C-nUl15lGiGHvQienLjxt0Qmcs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

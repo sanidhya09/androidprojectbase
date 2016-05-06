@@ -1,11 +1,16 @@
 package com.base.core;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -27,6 +32,8 @@ import com.base.activities.AppSettings;
 import com.base.activities.LocationActivity;
 import com.base.adapters.NavigationDrawerAdapter;
 import com.base.fragments.FragmentA;
+import com.base.gcm.QuickstartPreferences;
+import com.base.gcm.RegistrationIntentService;
 import com.base.models.Contributor;
 
 import java.util.Arrays;
@@ -39,12 +46,66 @@ import retrofit2.Response;
 public class MainActivity extends BaseActivity implements NavigationDrawerAdapter.ItmClicked {
     private DrawerLayout mDrawerLayout;
     private LinearLayout linearLayout;
+    private BroadcastReceiver mRegistrationBroadcastReceiver;
+    private boolean isReceiverRegistered;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setUpToolBarAndDrawer();
+        sampleRestService();
+        initGCM();
+    }
+
+    private void initGCM() {
+        mRegistrationBroadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                SharedPreferences sharedPreferences =
+                        PreferenceManager.getDefaultSharedPreferences(context);
+                boolean sentToken = sharedPreferences
+                        .getBoolean(QuickstartPreferences.SENT_TOKEN_TO_SERVER, false);
+                if (sentToken) {
+                    // mInformationTextView.setText(getString(R.string.gcm_send_message));
+                } else {
+                    //  mInformationTextView.setText(getString(R.string.token_error_message));
+                }
+            }
+        };
+        // Registering BroadcastReceiver
+        registerReceiver();
+
+        if (utilitySingleton.checkPlayServices(this)) {
+            // Start IntentService to register this application with GCM.
+            Intent intent = new Intent(this, RegistrationIntentService.class);
+            startService(intent);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        registerReceiver();
+    }
+
+    @Override
+    protected void onPause() {
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
+        isReceiverRegistered = false;
+        super.onPause();
+    }
+
+    private void registerReceiver() {
+        if (!isReceiverRegistered) {
+            LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+                    new IntentFilter(QuickstartPreferences.REGISTRATION_COMPLETE));
+            isReceiverRegistered = true;
+        }
+    }
+
+    private void setUpToolBarAndDrawer() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
@@ -81,7 +142,9 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
         };
         mDrawerLayout.addDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();
+    }
 
+    private void sampleRestService() {
         AppApplication appApplication = (AppApplication) getApplication();
         Call<List<Contributor>> call = appApplication.getRestService().contributors("square", "retrofit");
 
