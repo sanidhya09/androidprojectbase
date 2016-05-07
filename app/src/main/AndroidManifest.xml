@@ -58,6 +58,10 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!-- [END gcm_permission] -->
     <permission-group android:name="android.permission-group.LOCATION" />
+    <!-- [Required for google places only] -->
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="YOUR_API_KEY"/>
 
     <application
         android:name=".core.AppApplication"
@@ -71,9 +75,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="adjustPan">
-        <activity android:name="com.base.core.MainActivity" />
-        <activity android:name="com.base.core.BaseActivity" />
-        <activity android:name="com.base.core.SplashActivity">
+        <activity android:name=".core.MainActivity" />
+        <activity android:name=".core.BaseActivity" />
+        <activity android:name=".core.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -90,16 +94,17 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name="com.base.activities.AppSettings" />
-        <activity android:name="com.base.activities.LocationActivity" />
+        <activity android:name=".activities.AppSettings" />
+        <activity android:name=".activities.LocationActivity" />
 
         <!-- [START gcm_receiver] -->
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
             android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
                 <category android:name="gcm.play.android.samples.com.gcmquickstart" />
             </intent-filter>
         </receiver>
@@ -107,7 +112,7 @@
         <!-- [START gcm_listener] -->
         <service
             android:name="gcm.MyGcmListenerService"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
@@ -118,14 +123,15 @@
             android:name="gcm.MyInstanceIDListenerService"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.google.android.gms.iid.InstanceID"/>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
             </intent-filter>
         </service>
         <!-- [END instanceId_listener] -->
         <service
             android:name="gcm.RegistrationIntentService"
-            android:exported="false">
-        </service>
+            android:exported="false"></service>
+
+        <activity android:name=".activities.PlacesAutoCompleteSample"></activity>
     </application>
 
 </manifest>

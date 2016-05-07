@@ -1,6 +1,7 @@
 package com.base.activities;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -19,10 +20,16 @@ import com.base.core.BaseActivity;
 import com.base.models.Contributor;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 
 import rx.Observable;
 import rx.Observer;
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
@@ -30,6 +37,7 @@ import rx.schedulers.Schedulers;
 public class AppSettings extends BaseActivity {
 
     private static final int REQUEST_CODE_LOCATION = 101;
+    private Subscriber<String> subscriber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +54,46 @@ public class AppSettings extends BaseActivity {
             // getLocation(context);
         }
 
+        rxImplementationSampleMethod();
+        rxImplementationSampleMethod2();
+    }
+
+    private void rxImplementationSampleMethod2() {
+        subscriber = new Subscriber<String>() {
+
+            @Override
+            public void onCompleted() {
+                System.out.println("Done");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onNext(String t) {
+                System.out.println(t);
+            }
+
+        };
+
+        Observable.create(new Observable.OnSubscribe<String>() {
+
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                try {
+                    subscriber.onNext(longRunningOperation());
+                    subscriber.onCompleted();
+                } catch (Exception e) {
+                    subscriber.onError(e);
+                }
+            }
+
+        }).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread()).subscribe(subscriber);
+    }
+
+    private void rxImplementationSampleMethod() {
         // Rx implementation
         Observable.just("Reg ID").map(new Func1<String, Contributor>() {
             public Contributor baseModel;
@@ -72,6 +120,10 @@ public class AppSettings extends BaseActivity {
 
             }
         });
+    }
+
+    private String longRunningOperation() {
+        return "Hola!!";
     }
 
 
@@ -108,5 +160,14 @@ public class AppSettings extends BaseActivity {
                 break;
         }
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (subscriber != null && subscriber.isUnsubscribed()) {
+            subscriber.unsubscribe();
+        }
+    }
+
 
 }

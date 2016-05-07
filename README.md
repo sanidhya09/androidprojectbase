@@ -16,6 +16,7 @@ It includes:
 5. Custom fonts class with its implementation in XML file.
 6. LocationActivity based on fused location for getting current locations.
 7. GCM based push notification based on play services 8.4
+8. Marshmallow permission request sample.
 
 How to use
 ----

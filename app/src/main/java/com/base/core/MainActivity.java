@@ -30,6 +30,7 @@ import android.widget.TextView;
 import com.base.R;
 import com.base.activities.AppSettings;
 import com.base.activities.LocationActivity;
+import com.base.activities.PlacesAutoCompleteSample;
 import com.base.adapters.NavigationDrawerAdapter;
 import com.base.fragments.FragmentA;
 import com.base.gcm.QuickstartPreferences;
@@ -199,6 +200,10 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
         }
         if (id == R.id.action_exit) {
             finish();
+            return true;
+        }
+        if (id == R.id.action_places) {
+            startActivity(new Intent(MainActivity.this, PlacesAutoCompleteSample.class));
             return true;
         }
         return super.onOptionsItemSelected(item);
