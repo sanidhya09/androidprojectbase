@@ -32,7 +32,7 @@ import com.base.activities.AppSettings;
 import com.base.activities.LocationActivity;
 import com.base.activities.PlacesAutoCompleteSample;
 import com.base.adapters.NavigationDrawerAdapter;
-import com.base.fragments.FragmentA;
+import com.base.fragments.Camera2BasicFragment;
 import com.base.gcm.QuickstartPreferences;
 import com.base.gcm.RegistrationIntentService;
 import com.base.models.Contributor;
@@ -218,8 +218,10 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
     @Override
     public void onItemClick(int position) {
         mDrawerLayout.closeDrawer(Gravity.LEFT);
-        FragmentA fragmentA = new FragmentA();
-        loadRootFragment(fragmentA);
+//        FragmentA fragmentA = new FragmentA();
+//        loadRootFragment(fragmentA);
+        Camera2BasicFragment camera2RawFragment = new Camera2BasicFragment();
+        loadRootFragment(camera2RawFragment);
     }
 
     @Override

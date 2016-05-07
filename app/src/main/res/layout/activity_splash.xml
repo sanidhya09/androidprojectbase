@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     >
 
-    <com.base.utils.CustomTextView
+    <com.base.views.CustomTextView
         android:id="@+id/splash_text_line_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         app:font_name="medium"
         />
 
-    <com.base.utils.CustomTextView
+    <com.base.views.CustomTextView
         android:id="@+id/splash_text_line_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

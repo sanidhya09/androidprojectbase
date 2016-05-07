@@ -22,4 +22,6 @@
     <string name="location_updated_message">Location updated</string>
     <string name="exit">Exit</string>
     <string name="find_places">Find Places</string>
+    <string name="intro_message">intro msg</string>
+    <string name="request_permission">Request Permission</string>
 </resources>
