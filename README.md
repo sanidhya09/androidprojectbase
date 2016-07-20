@@ -5,7 +5,7 @@ Android Project Base
 What's this?
 ----
 
-It is a ready to start development for an Android app project structure. 
+It is a ready to start development for an Android app project sample with base library. 
 
 It includes:
 
@@ -14,7 +14,7 @@ It includes:
 3. RX java sample implementation.
 4. Toolbar and Navigation drawer with RecyclerView.
 5. Custom fonts class with its implementation in XML file.
-6. LocationActivity based on fused location for getting current locations.
+6. LocationUtil based on fused location for getting current locations.
 7. GCM based push notification based on play services 8.4
 8. Marshmallow permission request sample.
 9. Google AutoComplete Places Widget for searching places.

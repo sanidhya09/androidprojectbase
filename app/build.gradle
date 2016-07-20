@@ -35,7 +35,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.google.dagger:dagger:2.0'
     apt 'com.google.dagger:dagger-compiler:2.0'
-    compile "com.google.android.gms:play-services-location:${android_google_lib_version}"
     compile "com.google.android.gms:play-services-gcm:${android_google_lib_version}"
     compile project(path: ':baselibrary')
 }

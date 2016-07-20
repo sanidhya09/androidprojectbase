@@ -28,6 +28,7 @@ import java.util.Collection;
 
 /**
  * Created by Sanidhya09 on 18/07/2016.
+ * http://www.programcreek.com/java-api-examples/index.php?source_dir=LOL-Chat-master/app/src/main/java/com/github/theholywaffle/lolchatapi/wrapper/Friend.java
  */
 public class XMPPUtil {
 

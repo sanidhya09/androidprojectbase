@@ -9,6 +9,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.squareup.otto.Bus;
+import com.squareup.otto.ThreadEnforcer;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,7 +47,7 @@ public class UtilitySingleton {
     public void ShowToast(String msg) {
 
         if (msg != null && !msg.trim().equalsIgnoreCase("") && !msg.equalsIgnoreCase("")) {
-                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
         }
 
 
@@ -90,4 +93,7 @@ public class UtilitySingleton {
         }
     }
 
+    public Bus busProvider() {
+        return new Bus(ThreadEnforcer.ANY);
+    }
 }
