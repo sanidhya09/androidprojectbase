@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
-import com.base.utils.UtilitySingleton;
 
 import javax.inject.Inject;
+
+import xicom.com.baselibrary.UtilitySingleton;
 
 /**
  * Created by sanidhya on 6/5/16.

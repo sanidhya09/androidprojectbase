@@ -78,11 +78,9 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
         // Registering BroadcastReceiver
         registerReceiver();
 
-        if (utilitySingleton.checkPlayServices(this)) {
-            // Start IntentService to register this application with GCM.
-            Intent intent = new Intent(this, RegistrationIntentService.class);
-            startService(intent);
-        }
+        // Start IntentService to register this application with GCM.
+        Intent intent = new Intent(this, RegistrationIntentService.class);
+        startService(intent);
     }
 
     @Override

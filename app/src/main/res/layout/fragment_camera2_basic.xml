@@ -16,8 +16,8 @@
 
     <com.base.views.AutoFitTextureView
         android:id="@+id/texture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
 

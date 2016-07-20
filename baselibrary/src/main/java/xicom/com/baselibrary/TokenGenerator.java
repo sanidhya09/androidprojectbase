@@ -1,4 +1,4 @@
-package com.base.utils;
+package xicom.com.baselibrary;
 
 import android.util.Base64;
 

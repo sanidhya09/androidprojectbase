@@ -1,4 +1,4 @@
-package com.base.utils;
+package xicom.com.baselibrary;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,9 +8,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -92,21 +89,5 @@ public class UtilitySingleton {
             return false;
         }
     }
-    /**
-     * Method to verify google play services on the device
-     */
-    public boolean checkPlayServices(Activity context) {
-        GoogleApiAvailability googleAPI = GoogleApiAvailability.getInstance();
-        int result = googleAPI.isGooglePlayServicesAvailable(context);
-        if (result != ConnectionResult.SUCCESS) {
-            if (googleAPI.isUserResolvableError(result)) {
-                googleAPI.getErrorDialog(context, result,
-                        1000).show();
-            }
 
-            return false;
-        }
-
-        return true;
-    }
 }

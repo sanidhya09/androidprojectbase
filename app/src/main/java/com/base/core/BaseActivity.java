@@ -4,9 +4,10 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.base.utils.UtilitySingleton;
 
 import javax.inject.Inject;
+
+import xicom.com.baselibrary.UtilitySingleton;
 
 public class BaseActivity extends AppCompatActivity {
     public Context context;

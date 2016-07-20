@@ -1,5 +1,6 @@
 package com.base.dependencyinjection;
 
+import com.base.core.AppApplication;
 import com.base.core.BaseActivity;
 import com.base.core.BaseFragment;
 
@@ -14,4 +15,5 @@ import dagger.Component;
 public interface DiComponent {
     void inject(BaseActivity activity);
     void inject(BaseFragment fragment);
+    void inject(AppApplication appApplication);
 }
