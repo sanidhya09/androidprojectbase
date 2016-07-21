@@ -17,8 +17,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e536af23-b008-49bd-a3ec-ccaedf1ea5af" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java" afterPath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java" />
     </list>
@@ -52,10 +50,10 @@
         <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="109" column="35" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="35" />
+              <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
               <folding>
-                <element signature="e#1398#1399#0" expanded="true" />
-                <element signature="e#1433#1434#0" expanded="true" />
+                <element signature="e#1397#1398#0" expanded="true" />
+                <element signature="e#1432#1433#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,14 +62,14 @@
       <file leaf-file-name="LocationActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4582744">
-              <caret line="72" column="40" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.3479491">
+              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
                 <element signature="e#1701#1750#0" expanded="true" />
                 <element signature="e#1778#1828#0" expanded="true" />
                 <element signature="e#1861#1918#0" expanded="true" />
-                <element signature="e#2387#2993#0" expanded="true" />
-                <element signature="e#2992#2993#0" expanded="true" />
+                <element signature="e#2131#2737#0" expanded="true" />
+                <element signature="e#2736#2737#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2831,9 +2829,9 @@
         <option value="$PROJECT_DIR$/app/.gitignore" />
         <option value="$PROJECT_DIR$/baselibrary/.gitignore" />
         <option value="$PROJECT_DIR$/baselibrary/build.gradle" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java" />
-        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -3471,7 +3469,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java</url>
-          <line>118</line>
+          <line>115</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -3765,6 +3763,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7199434">
           <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3878,17 +3877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="109" column="35" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="35" />
-          <folding>
-            <element signature="e#1398#1399#0" expanded="true" />
-            <element signature="e#1433#1434#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.27298445">
@@ -3911,16 +3899,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+          <folding>
+            <element signature="e#1397#1398#0" expanded="true" />
+            <element signature="e#1432#1433#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4582744">
-          <caret line="72" column="40" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.3479491">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
             <element signature="e#1701#1750#0" expanded="true" />
             <element signature="e#1778#1828#0" expanded="true" />
             <element signature="e#1861#1918#0" expanded="true" />
-            <element signature="e#2387#2993#0" expanded="true" />
-            <element signature="e#2992#2993#0" expanded="true" />
+            <element signature="e#2131#2737#0" expanded="true" />
+            <element signature="e#2736#2737#0" expanded="true" />
           </folding>
         </state>
       </provider>

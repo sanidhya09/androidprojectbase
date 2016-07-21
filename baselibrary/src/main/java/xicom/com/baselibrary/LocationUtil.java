@@ -40,7 +40,7 @@ public class LocationUtil implements
     private LocationUtil() {
     }
 
-    public static LocationUtil getInstatnce() {
+    public static LocationUtil getInstance() {
         return locationUtil;
     }
 
