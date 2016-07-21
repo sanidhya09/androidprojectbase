@@ -21,6 +21,6 @@ public class DiModule {
     @Provides
     @Singleton
     RetroFitUtil provideRetroFitUtil() {
-        return new RetroFitUtil("https://api.github.com");
+        return new RetroFitUtil("https://pubs.usgs.gov");
     }
 }

@@ -145,26 +145,28 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
 
     private void sampleRestService() {
         AppApplication appApplication = (AppApplication) getApplication();
-        Call<List<Contributor>> call = appApplication.getRestService().contributors("square", "retrofit");
+//        Call<List<Contributor>> call = appApplication.getRestService().contributors("square", "retrofit");
+//
+//        call.enqueue(new Callback<List<Contributor>>() {
+//            @Override
+//            public void onResponse(Call<List<Contributor>> call, Response<List<Contributor>> response) {
+//                if (response.isSuccessful()) {
+//                    for (Contributor contributor : response.body()) {
+//                        System.out.println(contributor.login + " (" + contributor.contributions + ")");
+//                    }
+//                } else {
+//                    // error response, no access to resource?
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Contributor>> call, Throwable t) {
+//
+//            }
+//        });
 
-        call.enqueue(new Callback<List<Contributor>>() {
-            @Override
-            public void onResponse(Call<List<Contributor>> call, Response<List<Contributor>> response) {
-                if (response.isSuccessful()) {
-                    for (Contributor contributor : response.body()) {
-                        System.out.println(contributor.login + " (" + contributor.contributions + ")");
-                    }
-                } else {
-                    // error response, no access to resource?
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<List<Contributor>> call, Throwable t) {
-
-            }
-        });
+        appApplication.retroFitUtil.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "read", "pdf", this);
     }
 
     @Override

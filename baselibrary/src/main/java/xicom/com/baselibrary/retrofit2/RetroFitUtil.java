@@ -2,6 +2,7 @@ package xicom.com.baselibrary.retrofit2;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
@@ -26,12 +27,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetroFitUtil {
     private Retrofit retrofit;
-    private Context context;
     private String baseUrl;
     public static final String TAG = RetroFitUtil.class.getName();
 
-    public RetroFitUtil(Context context, String baseUrl) {
-        this.context = context;
+    public RetroFitUtil(String baseUrl) {
         this.baseUrl = baseUrl;
     }
 
@@ -63,7 +62,7 @@ public class RetroFitUtil {
         return retrofit;
     }
 
-    public void downloadLargeFile(final String url, final String fileName, final String fileExtension) {
+    public void downloadLargeFile(final String url, final String fileName, final String fileExtension, final Context context) {
         final FileDownloadService downloadService =
                 getRetrofit().create(FileDownloadService.class);
 
@@ -77,9 +76,7 @@ public class RetroFitUtil {
                     public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
                         if (response.isSuccessful()) {
                             Log.d(TAG, "server contacted and has file");
-
-                            boolean writtenToDisk = writeResponseBodyToDisk(response.body(), fileName, fileExtension);
-
+                            boolean writtenToDisk = writeResponseBodyToDisk(response.body(), fileName, fileExtension, context);
                             Log.d(TAG, "file download was a success? " + writtenToDisk);
                         } else {
                             Log.d(TAG, "server contact failed");
@@ -88,7 +85,7 @@ public class RetroFitUtil {
 
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
-
+                        Log.d(TAG, "Failed :: "+t.getLocalizedMessage());
                     }
 
 
@@ -99,10 +96,10 @@ public class RetroFitUtil {
 
     }
 
-    private boolean writeResponseBodyToDisk(ResponseBody body, String fileName, String fileExtension) {
+    private boolean writeResponseBodyToDisk(ResponseBody body, String fileName, String fileExtension, Context context) {
         try {
             // todo change the file location/name according to your needs
-            File futureStudioIconFile = new File(context.getExternalFilesDir(null) + File.separator + fileName+"."+fileExtension);
+            File futureStudioIconFile = new File(Environment.getExternalStorageDirectory() + File.separator + fileName + "." + fileExtension);
 
             InputStream inputStream = null;
             OutputStream outputStream = null;
