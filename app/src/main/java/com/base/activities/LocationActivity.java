@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.base.R;
+
 import xicom.com.baselibrary.LocationUtil;
+
 import com.base.core.BaseActivity;
 
 public class LocationActivity extends BaseActivity {
@@ -28,7 +30,6 @@ public class LocationActivity extends BaseActivity {
     protected String mLastUpdateTimeLabel;
     protected Boolean mRequestingLocationUpdates;
     protected String mLastUpdateTime;
-    private LocationUtil locationUtil;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,9 +51,7 @@ public class LocationActivity extends BaseActivity {
         mRequestingLocationUpdates = false;
         mLastUpdateTime = "";
 
-        locationUtil = new LocationUtil(this);
-        locationUtil.startLocationUpdates();
-        locationUtil.setOnLocationChangeInterface(new LocationUtil.GetLocationUpdates() {
+        LocationUtil.on(this).startLocationUpdates().setOnLocationChangeInterface(new LocationUtil.GetLocationUpdates() {
             @Override
             public void getLocation(Location location) {
                 mLatitudeTextView.setText(String.format("%s: %f", mLatitudeLabel,
@@ -69,7 +68,6 @@ public class LocationActivity extends BaseActivity {
         if (!mRequestingLocationUpdates) {
             mRequestingLocationUpdates = true;
             setButtonsEnabledState();
-            locationUtil.startLocationUpdates();
         }
     }
 
@@ -77,7 +75,7 @@ public class LocationActivity extends BaseActivity {
         if (mRequestingLocationUpdates) {
             mRequestingLocationUpdates = false;
             setButtonsEnabledState();
-            locationUtil.stopLocationUpdates();
+            LocationUtil.on(this).stopLocationUpdates();
         }
     }
 
@@ -94,7 +92,7 @@ public class LocationActivity extends BaseActivity {
 
     @Override
     protected void onStop() {
-        locationUtil.stopLocationUpdates();
+        LocationUtil.on(this).stopLocationUpdates();
         super.onStop();
     }
 //

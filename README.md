@@ -45,7 +45,8 @@ Usage
         // To Stop Location Services
         locationUtil.stopLocationUpdates();
 ```
-2. For RestServices RetroFit 2 :
+
+2. For RestServices RetroFit2 :
 
 ```
    // initializes retrofit service

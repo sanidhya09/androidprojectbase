@@ -27,11 +27,18 @@ public class LocationUtil implements
     protected GoogleApiClient mGoogleApiClient;
     protected LocationRequest mLocationRequest;
     protected Location mCurrentLocation;
-    private Context context;
+    private static Activity activity;
 
-    public LocationUtil(Activity locationActivity) {
-        this.context = locationActivity;
-        init();
+    private LocationUtil() {
+     init();
+    }
+
+    public static LocationUtil on(Activity lActivity) {
+        if (lActivity == null) {
+            throw new IllegalArgumentException("Null Fragment Reference");
+        }
+        activity = lActivity;
+        return new LocationUtil();
     }
 
     public void init() {
@@ -39,12 +46,11 @@ public class LocationUtil implements
         // API.
         buildGoogleApiClient();
         mGoogleApiClient.connect();
-
     }
 
     protected synchronized void buildGoogleApiClient() {
         Log.i(TAG, "Building GoogleApiClient");
-        mGoogleApiClient = new GoogleApiClient.Builder(context)
+        mGoogleApiClient = new GoogleApiClient.Builder(activity)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
@@ -69,20 +75,22 @@ public class LocationUtil implements
     }
 
 
-    public void startLocationUpdates() {
+    public LocationUtil startLocationUpdates() {
         if (mGoogleApiClient.isConnected()) {
             LocationServices.FusedLocationApi.requestLocationUpdates(
                     mGoogleApiClient, mLocationRequest, this);
         } else {
             mGoogleApiClient.connect();
         }
+        return this;
     }
 
-    public void stopLocationUpdates() {
-        if (mGoogleApiClient.isConnected()) {
+    public LocationUtil stopLocationUpdates() {
+        if (mGoogleApiClient != null && mGoogleApiClient.isConnected()) {
             LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
             mGoogleApiClient.disconnect();
         }
+        return this;
     }
 
     @Override
