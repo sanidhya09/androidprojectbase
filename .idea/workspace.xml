@@ -17,8 +17,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e536af23-b008-49bd-a3ec-ccaedf1ea5af" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java" afterPath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/FileDownloadService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/RetroFitUtil.java" afterPath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/RetroFitUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/core/AppApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/core/AppApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/dependencyinjection/DiModule.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/dependencyinjection/DiModule.java" />
     </list>
     <ignored path="androidprojectbase.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,31 +50,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LocationUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java">
+      <file leaf-file-name="RetroFitUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/RetroFitUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.4582744">
+              <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
               <folding>
-                <element signature="e#1397#1398#0" expanded="true" />
-                <element signature="e#1432#1433#0" expanded="true" />
+                <element signature="e#1321#1833#0" expanded="true" />
+                <element signature="e#1832#1833#0" expanded="true" />
+                <element signature="e#2259#3342#0" expanded="true" />
+                <element signature="e#3341#3342#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LocationActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java">
+      <file leaf-file-name="FileDownloadService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/FileDownloadService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3479491">
-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
               <folding>
-                <element signature="e#1701#1750#0" expanded="true" />
-                <element signature="e#1778#1828#0" expanded="true" />
-                <element signature="e#1861#1918#0" expanded="true" />
-                <element signature="e#2131#2737#0" expanded="true" />
-                <element signature="e#2736#2737#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/network/RestService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2781,8 +2793,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/base/location/ProviderError.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/base/location/TrackerSettings.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/base/location/LocationTracker.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/base/location/LocationUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/base/activities/MainActivity.java" />
@@ -2832,6 +2842,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java" />
+        <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/FileDownloadService.java" />
+        <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/RetroFitUtil.java" />
       </list>
     </option>
   </component>
@@ -2964,6 +2976,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="baselibrary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="androidprojectbase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="androidprojectbase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baselibrary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baselibrary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retrofit2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3469,7 +3515,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java</url>
-          <line>115</line>
+          <line>114</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -3484,30 +3530,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/shape_notification.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13235295">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.gradle/wrapper/dists/gradle-2.10-all/a4w5fzrkeut1ox71xslb49gst/gradle-2.10/src/core/org/gradle/api/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34508076">
-          <caret line="382" column="12" selection-start-line="382" selection-start-column="12" selection-end-line="382" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/shape_red_notification_circle.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/feed_update_count.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4417178">
@@ -3796,8 +3818,8 @@
         <state vertical-scroll-proportion="0.30472103">
           <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
           <folding>
-            <element signature="e#476#477#0" expanded="false" />
-            <element signature="e#541#542#0" expanded="false" />
+            <element signature="e#486#487#0" expanded="false" />
+            <element signature="e#551#552#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3831,17 +3853,6 @@
         <state vertical-scroll-proportion="0.7307692">
           <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="64" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/RetroFitUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.261669">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding>
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3899,10 +3910,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+          <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+          <folding>
+            <element signature="e#1701#1750#0" expanded="true" />
+            <element signature="e#1778#1828#0" expanded="true" />
+            <element signature="e#1861#1918#0" expanded="true" />
+            <element signature="e#2131#2737#0" expanded="true" />
+            <element signature="e#2736#2737#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79632246">
+          <caret line="84" column="49" selection-start-line="84" selection-start-column="49" selection-end-line="84" selection-end-column="49" />
           <folding>
             <element signature="e#1397#1398#0" expanded="true" />
             <element signature="e#1432#1433#0" expanded="true" />
@@ -3910,16 +3935,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/network/RestService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3479491">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/FileDownloadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
           <folding>
-            <element signature="e#1701#1750#0" expanded="true" />
-            <element signature="e#1778#1828#0" expanded="true" />
-            <element signature="e#1861#1918#0" expanded="true" />
-            <element signature="e#2131#2737#0" expanded="true" />
-            <element signature="e#2736#2737#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/70fca5cd856d0cc740e43affeb6f661204fdb2cc/okhttp-3.4.1-sources.jar!/okhttp3/ResponseBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.622348">
+          <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/RetroFitUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4582744">
+          <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
+          <folding>
+            <element signature="e#1321#1833#0" expanded="true" />
+            <element signature="e#1832#1833#0" expanded="true" />
+            <element signature="e#2259#3342#0" expanded="true" />
+            <element signature="e#3341#3342#0" expanded="true" />
           </folding>
         </state>
       </provider>

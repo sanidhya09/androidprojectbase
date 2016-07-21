@@ -9,7 +9,7 @@ import com.base.network.RestService;
 
 import javax.inject.Inject;
 
-import xicom.com.baselibrary.RetroFitUtil;
+import xicom.com.baselibrary.retrofit2.RetroFitUtil;
 
 /**
  * Created by sanidhya on 3/5/16.
