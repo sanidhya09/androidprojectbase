@@ -2,6 +2,8 @@ package xicom.com.baselibrary;
 
 import android.app.Activity;
 import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,45 +14,66 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 /**
  * Created by sanidhya on 20/7/16.
  */
 public class LocationUtil implements
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
+    private static final LocationUtil locationUtil = new LocationUtil();
     protected static final String TAG = "location-updates-sample";
     GetLocationUpdates getLocationUpdates;
-    public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
-    public static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS =
-            UPDATE_INTERVAL_IN_MILLISECONDS / 2;
+    private int priority = LocationRequest.PRIORITY_HIGH_ACCURACY;
+    private long interval = 10000;
+    private long fastestUpdateInterval =
+            interval / 2;
 
     protected GoogleApiClient mGoogleApiClient;
     protected LocationRequest mLocationRequest;
     protected Location mCurrentLocation;
-    private static Activity activity;
+    private Context context;
 
     private LocationUtil() {
-     init();
     }
 
-    public static LocationUtil on(Activity lActivity) {
-        if (lActivity == null) {
-            throw new IllegalArgumentException("Null Fragment Reference");
+    public static LocationUtil getInstatnce() {
+        return locationUtil;
+    }
+
+    public static class LocationConfig {
+        private long interval;
+        private int priority;
+
+        public LocationConfig setInterval(long interval) {
+            this.interval = interval;
+            return this;
         }
-        activity = lActivity;
-        return new LocationUtil();
+
+        public LocationConfig setPriority(int priority) {
+            this.priority = priority;
+            return this;
+        }
     }
 
-    public void init() {
-        // Kick off the process of building a GoogleApiClient and requesting the LocationServices
-        // API.
+    public LocationUtil setConfig(LocationConfig locationConfig) {
+        interval = locationConfig.interval;
+        priority = locationConfig.priority;
+        return this;
+    }
+
+    public LocationUtil init(Context locationActivity) {
+        this.context = locationActivity;
         buildGoogleApiClient();
-        mGoogleApiClient.connect();
+        return this;
     }
 
     protected synchronized void buildGoogleApiClient() {
         Log.i(TAG, "Building GoogleApiClient");
-        mGoogleApiClient = new GoogleApiClient.Builder(activity)
+        mGoogleApiClient = new GoogleApiClient.Builder(context)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
@@ -60,23 +83,15 @@ public class LocationUtil implements
 
     protected void createLocationRequest() {
         mLocationRequest = new LocationRequest();
-
-        // Sets the desired interval for active location updates. This interval is
-        // inexact. You may not receive updates at all if no location sources are available, or
-        // you may receive them slower than requested. You may also receive updates faster than
-        // requested if other applications are requesting location at a faster interval.
-        mLocationRequest.setInterval(UPDATE_INTERVAL_IN_MILLISECONDS);
-
-        // Sets the fastest rate for active location updates. This interval is exact, and your
-        // application will never receive updates faster than this value.
-        mLocationRequest.setFastestInterval(FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS);
-
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        mLocationRequest.setInterval(interval);
+        mLocationRequest.setFastestInterval(fastestUpdateInterval);
+        mLocationRequest.setPriority(priority);
     }
 
 
     public LocationUtil startLocationUpdates() {
         if (mGoogleApiClient.isConnected()) {
+            createLocationRequest();
             LocationServices.FusedLocationApi.requestLocationUpdates(
                     mGoogleApiClient, mLocationRequest, this);
         } else {
@@ -85,12 +100,23 @@ public class LocationUtil implements
         return this;
     }
 
-    public LocationUtil stopLocationUpdates() {
-        if (mGoogleApiClient != null && mGoogleApiClient.isConnected()) {
+    public void stopLocationUpdates() {
+        if (mGoogleApiClient.isConnected()) {
             LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
             mGoogleApiClient.disconnect();
         }
-        return this;
+    }
+
+    public List<Address> getAddress(double latitude, double longitude) {
+        Geocoder geocoder;
+        geocoder = new Geocoder(context, Locale.getDefault());
+
+        try {
+            return geocoder.getFromLocation(latitude, longitude, 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override

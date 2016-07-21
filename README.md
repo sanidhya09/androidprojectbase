@@ -33,17 +33,25 @@ Usage
     
 ```
         // To start Location Services
-        LocationUtil locationUtil = new LocationUtil(this);
-        locationUtil.startLocationUpdates();
-        locationUtil.setOnLocationChangeInterface(new LocationUtil.GetLocationUpdates() {
-            @Override
-            public void getLocation(Location location) {
-                
-            }
-        });
+        final LocationUtil locationUtil = LocationUtil.getInstatnce();
+                locationUtil.init(this);
+        
+                LocationUtil.LocationConfig locationConfig = new LocationUtil.LocationConfig();
+                locationConfig.setInterval(1000).setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+                locationUtil.setConfig(locationConfig).startLocationUpdates();
+        
+                locationUtil.setOnLocationChangeInterface(new LocationUtil.GetLocationUpdates() {
+                    @Override
+                    public void getLocation(Location location) {
+                        
+                    }
+                });
 
         // To Stop Location Services
         locationUtil.stopLocationUpdates();
+        
+        // To get the human readable address
+        List<Address> address = locationUtil.getAddress(location.getLatitude(), location.getLongitude())
 ```
 
 2. For RestServices RetroFit2 :

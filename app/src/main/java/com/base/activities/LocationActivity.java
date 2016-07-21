@@ -1,5 +1,6 @@
 package com.base.activities;
 
+import android.location.Address;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -12,6 +13,9 @@ import com.base.R;
 import xicom.com.baselibrary.LocationUtil;
 
 import com.base.core.BaseActivity;
+import com.google.android.gms.location.LocationRequest;
+
+import java.util.List;
 
 public class LocationActivity extends BaseActivity {
 
@@ -30,6 +34,7 @@ public class LocationActivity extends BaseActivity {
     protected String mLastUpdateTimeLabel;
     protected Boolean mRequestingLocationUpdates;
     protected String mLastUpdateTime;
+    private LocationUtil locationUtil;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,23 +56,36 @@ public class LocationActivity extends BaseActivity {
         mRequestingLocationUpdates = false;
         mLastUpdateTime = "";
 
-        LocationUtil.on(this).startLocationUpdates().setOnLocationChangeInterface(new LocationUtil.GetLocationUpdates() {
+         locationUtil = LocationUtil.getInstatnce();
+        locationUtil.init(this);
+
+        LocationUtil.LocationConfig locationConfig = new LocationUtil.LocationConfig();
+        locationConfig.setInterval(1000).setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationUtil.setConfig(locationConfig).startLocationUpdates();
+
+        locationUtil.setOnLocationChangeInterface(new LocationUtil.GetLocationUpdates() {
             @Override
             public void getLocation(Location location) {
                 mLatitudeTextView.setText(String.format("%s: %f", mLatitudeLabel,
                         location.getLatitude()));
                 mLongitudeTextView.setText(String.format("%s: %f", mLongitudeLabel,
                         location.getLongitude()));
+                List<Address> address = locationUtil.getAddress(location.getLatitude(), location.getLongitude());
+                mLastUpdateTimeTextView.setText(address.get(0).getAddressLine(0));
             }
         });
 
-    }
 
+    }
 
     public void startUpdatesButtonHandler(View view) {
         if (!mRequestingLocationUpdates) {
             mRequestingLocationUpdates = true;
             setButtonsEnabledState();
+            LocationUtil.LocationConfig locationConfig = new LocationUtil.LocationConfig();
+            locationConfig.setInterval(1000).setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+            locationUtil.setConfig(locationConfig).startLocationUpdates();
+
         }
     }
 
@@ -75,7 +93,7 @@ public class LocationActivity extends BaseActivity {
         if (mRequestingLocationUpdates) {
             mRequestingLocationUpdates = false;
             setButtonsEnabledState();
-            LocationUtil.on(this).stopLocationUpdates();
+            locationUtil.stopLocationUpdates();
         }
     }
 
@@ -92,7 +110,7 @@ public class LocationActivity extends BaseActivity {
 
     @Override
     protected void onStop() {
-        LocationUtil.on(this).stopLocationUpdates();
+        locationUtil.stopLocationUpdates();
         super.onStop();
     }
 //

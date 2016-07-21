@@ -52,36 +52,26 @@
         <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocationActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="74" column="41" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+              <caret line="109" column="35" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="35" />
               <folding>
-                <element signature="e#1549#1598#0" expanded="true" />
-                <element signature="e#1626#1676#0" expanded="true" />
-                <element signature="e#1709#1766#0" expanded="true" />
-                <element signature="e#1933#2342#0" expanded="true" />
-                <element signature="e#2341#2342#0" expanded="true" />
+                <element signature="e#1398#1399#0" expanded="true" />
+                <element signature="e#1433#1434#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SplashActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/core/SplashActivity.java">
+      <file leaf-file-name="LocationActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3564814">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.4582744">
+              <caret line="72" column="40" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="40" />
               <folding>
-                <element signature="e#1186#1470#0" expanded="true" />
-                <element signature="e#1469#1470#0" expanded="true" />
+                <element signature="e#1701#1750#0" expanded="true" />
+                <element signature="e#1778#1828#0" expanded="true" />
+                <element signature="e#1861#1918#0" expanded="true" />
+                <element signature="e#2387#2993#0" expanded="true" />
+                <element signature="e#2992#2993#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2841,9 +2831,9 @@
         <option value="$PROJECT_DIR$/app/.gitignore" />
         <option value="$PROJECT_DIR$/baselibrary/.gitignore" />
         <option value="$PROJECT_DIR$/baselibrary/build.gradle" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -3095,7 +3085,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="device.picker.selection" value="192.168.56.103:5555" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/CutImage" />
-    <property name="SearchEverywhereHistoryKey" value="Locat&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java&#10;read&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/README.md&#10;retro&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/RetroFitUtil.java&#10;xmpp&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/XMPPUtil.java&#10;App&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/AppApplication.java&#10;LocationA&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/activities/LocationActivity.java&#10;mainA&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/MainActivity.java&#10;sett&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/activities/AppSettings.java&#10;mani&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/AndroidManifest.xml&#10;main&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/MainActivity.java" />
+    <property name="SearchEverywhereHistoryKey" value="read&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/README.md&#10;Uti&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/UtilitySingleton.java&#10;Locat&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java&#10;retro&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/RetroFitUtil.java&#10;xmpp&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/XMPPUtil.java&#10;App&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/AppApplication.java&#10;LocationA&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/activities/LocationActivity.java&#10;mainA&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/MainActivity.java&#10;sett&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/activities/AppSettings.java&#10;mani&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/AndroidManifest.xml&#10;main&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/MainActivity.java" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="DEBUGGABLE_DEVICE" value="motorola-xt1052-TA64303HJB" />
@@ -3401,7 +3391,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="875" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3409,7 +3399,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6689373" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6689373" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32561308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3481,12 +3471,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java</url>
-          <line>100</line>
+          <line>118</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java</url>
-          <line>102</line>
+          <line>128</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -3496,13 +3486,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.3/2e57a219582a72557a8353443edf4fce79a55c4/rxjava-1.1.3-sources.jar!/rx/functions/Func1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17821783">
-          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/shape_notification.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13235295">
@@ -3760,13 +3743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilitySingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8910891">
-          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/XMPPUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.9165488">
@@ -3859,6 +3835,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/RetroFitUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.261669">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/core/SplashActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+          <folding>
+            <element signature="e#1186#1470#0" expanded="true" />
+            <element signature="e#1469#1470#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/baselibrary/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/jars/classes.jar!/com/google/android/gms/location/LocationRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18502203">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilitySingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7892504">
+          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+          <folding>
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#630#631#0" expanded="true" />
+            <element signature="e#2686#2687#0" expanded="true" />
+            <element signature="e#2736#2737#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="109" column="35" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="35" />
+          <folding>
+            <element signature="e#1398#1399#0" expanded="true" />
+            <element signature="e#1433#1434#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.27298445">
@@ -3873,54 +3903,24 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.6891271">
-            <caret line="48" column="11" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
+          <first_editor vertical-scroll-proportion="0.3583461">
+            <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/RetroFitUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.261669">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding>
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="41" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.4582744">
+          <caret line="72" column="40" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="40" />
           <folding>
-            <element signature="e#1549#1598#0" expanded="true" />
-            <element signature="e#1626#1676#0" expanded="true" />
-            <element signature="e#1709#1766#0" expanded="true" />
-            <element signature="e#1933#2342#0" expanded="true" />
-            <element signature="e#2341#2342#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/core/SplashActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3564814">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding>
-            <element signature="e#1186#1470#0" expanded="true" />
-            <element signature="e#1469#1470#0" expanded="true" />
+            <element signature="e#1701#1750#0" expanded="true" />
+            <element signature="e#1778#1828#0" expanded="true" />
+            <element signature="e#1861#1918#0" expanded="true" />
+            <element signature="e#2387#2993#0" expanded="true" />
+            <element signature="e#2992#2993#0" expanded="true" />
           </folding>
         </state>
       </provider>
