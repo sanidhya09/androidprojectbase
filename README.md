@@ -31,7 +31,7 @@ Usage
 ----
 1. For Location Services :
     
-    ```
+```
         // To start Location Services
         LocationUtil locationUtil = new LocationUtil(this);
         locationUtil.startLocationUpdates();
@@ -41,13 +41,19 @@ Usage
                 
             }
         });
-    ```
-    
-    ```
+
         // To Stop Location Services
         locationUtil.stopLocationUpdates();
-    ```
-2. For RestServices RetroFit 2    
+```
+2. For RestServices RetroFit 2 :
+
+```
+   // initializes retrofit service
+      RetroFitUtil retroFitUtil = new RetroFitUtil("Your base URL Here ");
+  
+   // create your own RestService class
+     RestService restService = retroFitUtil.getRetrofit().create(RestService.class);
+```
 
 LICENSE
 ----
