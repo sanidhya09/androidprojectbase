@@ -9,8 +9,8 @@ import java.security.NoSuchAlgorithmException;
 public class TokenGenerator {
     static String sha, buf;
 
-    public static String getToken(long timestamp) throws UnsupportedEncodingException {
-        buf = "Your secret Key here" + timestamp;
+    public static String getToken(String secretKey, long timestamp) throws UnsupportedEncodingException {
+        buf = secretKey + timestamp;
         // //System.out.println("buf => " + buf);
         try {
             MessageDigest md = MessageDigest.getInstance("SHA1");
@@ -38,8 +38,8 @@ public class TokenGenerator {
         return Base64.encodeToString(bytes, Base64.NO_WRAP);
     }
 
-    public static String sha1(long timestamp) throws NoSuchAlgorithmException {
-        String string = "Secret Key" + timestamp;
+    public static String getSha1(String secretKey, long timestamp) throws NoSuchAlgorithmException {
+        String string = secretKey + timestamp;
         MessageDigest mDigest = MessageDigest.getInstance("SHA1");
         byte[] result = mDigest.digest(string.getBytes());
         StringBuffer sb = new StringBuffer();

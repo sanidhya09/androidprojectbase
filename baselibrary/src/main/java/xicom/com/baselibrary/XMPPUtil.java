@@ -32,15 +32,15 @@ import java.util.Collection;
  */
 public class XMPPUtil {
 
-    private static final String DOMAIN = "xmpp.jp";
-    private static final String HOST = "xmpp.jp";
-    private static final int PORT = 5222;
+    //    private static final String DOMAIN = "xmpp.jp";
+//    private static final String HOST = "xmpp.jp";
+//    private static final int PORT = 5222;
     AbstractXMPPConnection connection;
     ChatManager chatmanager;
     XMPPConnectionListener connectionListener = new XMPPConnectionListener();
 
     //Initialize
-    public void init() {
+    public void init(String domain, String host, int port) {
         Log.i("XMPP", "Initializing!");
 
         SmackConfiguration.DEBUG = true;
@@ -48,9 +48,9 @@ public class XMPPUtil {
         //configBuilder.setUsernameAndPassword(userName, passWord);
         configBuilder.setSecurityMode(ConnectionConfiguration.SecurityMode.disabled);
         configBuilder.setResource("Android");
-        configBuilder.setServiceName(DOMAIN);
-        configBuilder.setHost(HOST);
-        configBuilder.setPort(PORT);
+        configBuilder.setServiceName(domain);
+        configBuilder.setHost(host);
+        configBuilder.setPort(port);
         configBuilder.setSendPresence(true);
         configBuilder.setDebuggerEnabled(true);
         SASLAuthentication.blacklistSASLMechanism("SCRAM-SHA-1");
@@ -78,13 +78,17 @@ public class XMPPUtil {
         connectionThread.execute();
     }
 
-    public void sendMsg(String message) {
+    public AbstractXMPPConnection getConnection() {
+        return connection;
+    }
+
+    public void sendMsg(String message, String userId) {
         if (connection.isConnected()) {
             chatmanager = ChatManager.getInstanceFor(connection);
-            Chat chat = chatmanager.createChat("sanidhya09@xmpp.jp", new ChatMessageListener() {
+            Chat chat = chatmanager.createChat(userId, new ChatMessageListener() {
                 @Override
                 public void processMessage(Chat chat, Message message) {
-
+                    Log.d("xmpp", "Message Received :: " + message);
                 }
             });
 
@@ -96,17 +100,20 @@ public class XMPPUtil {
         }
     }
 
-    public void checkPresence(){
+    public void checkPresence() {
         Roster roster = Roster.getInstanceFor(connection);
         roster.addRosterListener(new RosterListener() {
-            public void entriesDeleted(Collection<String> addresses) {}
+            public void entriesDeleted(Collection<String> addresses) {
+            }
 
             @Override
             public void entriesAdded(Collection<String> addresses) {
 
             }
 
-            public void entriesUpdated(Collection<String> addresses) {}
+            public void entriesUpdated(Collection<String> addresses) {
+            }
+
             public void presenceChanged(Presence presence) {
                 System.out.println("Presence changed: " + presence.getFrom() + " " + presence);
             }
@@ -123,8 +130,8 @@ public class XMPPUtil {
 
     }
 
-    public void registerUser(String userName, String passWord){
-        AccountManager accountManager= AccountManager.getInstance(connection);
+    public void registerUser(String userName, String passWord) {
+        AccountManager accountManager = AccountManager.getInstance(connection);
         try {
             accountManager.sensitiveOperationOverInsecureConnection(true);
             accountManager.createAccount(userName, passWord);
@@ -135,6 +142,7 @@ public class XMPPUtil {
             e.printStackTrace();
         }
     }
+
     // Disconnect Function
     public void disconnectConnection() {
 
@@ -151,10 +159,6 @@ public class XMPPUtil {
         @Override
         public void connected(final XMPPConnection connection) {
             Log.d("xmpp", "Connected!");
-
-//            if (!connection.isAuthenticated()) {
-//                login("sanidhya336", "illicit_098");
-//            }
         }
 
         @Override

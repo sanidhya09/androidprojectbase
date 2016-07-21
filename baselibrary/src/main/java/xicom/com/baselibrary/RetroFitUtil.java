@@ -9,13 +9,18 @@ import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import xicom.com.baselibrary.AppConfig;
 
 /**
  * Created by sanidhya on 20/7/16.
  */
 public class RetroFitUtil {
     private Retrofit retrofit;
+    private String baseUrl;
+
+    public RetroFitUtil(String baseUrl) {
+
+        this.baseUrl = baseUrl;
+    }
 
     public Retrofit getRetrofit() {
         return (retrofit == null) ? setRetrofit() : retrofit;
@@ -37,7 +42,7 @@ public class RetroFitUtil {
             }
         }).build();
         retrofit = new Retrofit.Builder()
-                .baseUrl(AppConfig.BASE_URL)
+                .baseUrl(baseUrl)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
