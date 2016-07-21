@@ -11,7 +11,7 @@ import com.base.R;
 import xicom.com.baselibrary.LocationUtil;
 import com.base.core.BaseActivity;
 
-public class LocationActivity extends BaseActivity implements LocationUtil.GetLocationUpdates {
+public class LocationActivity extends BaseActivity {
 
     protected static final String TAG = "location-updates-sample";
 
@@ -51,6 +51,17 @@ public class LocationActivity extends BaseActivity implements LocationUtil.GetLo
         mLastUpdateTime = "";
 
         locationUtil = new LocationUtil(this);
+        locationUtil.startLocationUpdates();
+        locationUtil.setOnLocationChangeInterface(new LocationUtil.GetLocationUpdates() {
+            @Override
+            public void getLocation(Location location) {
+                mLatitudeTextView.setText(String.format("%s: %f", mLatitudeLabel,
+                        location.getLatitude()));
+                mLongitudeTextView.setText(String.format("%s: %f", mLongitudeLabel,
+                        location.getLongitude()));
+            }
+        });
+
     }
 
 
@@ -86,14 +97,12 @@ public class LocationActivity extends BaseActivity implements LocationUtil.GetLo
         locationUtil.stopLocationUpdates();
         super.onStop();
     }
-
-    @Override
-    public void getLocation(Location location) {
-        mLatitudeTextView.setText(String.format("%s: %f", mLatitudeLabel,
-                location.getLatitude()));
-        mLongitudeTextView.setText(String.format("%s: %f", mLongitudeLabel,
-                location.getLongitude()));
-        mLastUpdateTimeTextView.setText(String.format("%s: %s", mLastUpdateTimeLabel,
-                mLastUpdateTime));
-    }
+//
+//    @Override
+//    public void getLocation(Location location) {
+//        mLatitudeTextView.setText(String.format("%s: %f", mLatitudeLabel,
+//                location.getLatitude()));
+//        mLongitudeTextView.setText(String.format("%s: %f", mLongitudeLabel,
+//                location.getLongitude()));
+//    }
 }

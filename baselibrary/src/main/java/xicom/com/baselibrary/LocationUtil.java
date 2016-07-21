@@ -31,7 +31,6 @@ public class LocationUtil implements
 
     public LocationUtil(Activity locationActivity) {
         this.context = locationActivity;
-        getLocationUpdates = (GetLocationUpdates) locationActivity;
         init();
     }
 
@@ -130,5 +129,9 @@ public class LocationUtil implements
 
     public interface GetLocationUpdates {
         void getLocation(Location location);
+    }
+
+    public void setOnLocationChangeInterface(GetLocationUpdates getLocationUpdates) {
+        this.getLocationUpdates = getLocationUpdates;
     }
 }

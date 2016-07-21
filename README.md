@@ -27,6 +27,28 @@ How to use
 3. Rename the packages as per your need.
 4. Use this project for your application development.
 
+Usage
+----
+1. For Location Services :
+    
+    ```
+        // To start Location Services
+        LocationUtil locationUtil = new LocationUtil(this);
+        locationUtil.startLocationUpdates();
+        locationUtil.setOnLocationChangeInterface(new LocationUtil.GetLocationUpdates() {
+            @Override
+            public void getLocation(Location location) {
+                
+            }
+        });
+    ```
+    
+    ```
+        // To Stop Location Services
+        locationUtil.stopLocationUpdates();
+    ```
+2. For RestServices RetroFit 2    
+
 LICENSE
 ----
 
