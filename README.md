@@ -29,7 +29,7 @@ How to use
 
 Usage
 ----
-1. For Location Services :
+##### 1. For Location Services :
     
 ```
         // To start Location Services
@@ -54,7 +54,7 @@ Usage
         List<Address> address = locationUtil.getAddress(location.getLatitude(), location.getLongitude())
 ```
 
-2. For RestServices RetroFit2 :
+##### 2. For RestServices RetroFit2 :
 
 ```
    // initializes retrofit service
@@ -67,17 +67,17 @@ Usage
      retroFitUtil.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "read", "pdf", this);
 ```
 
-3. UtilitySingleton for rapid development:
+##### 3. UtilitySingleton for rapid development:
 
 ```
-// To check internet connection
-isOnline();
+    // To check internet connection
+    isOnline();
 
-// To uncompress zip file
-decompressZipFile(appname, fileName, password);
+    // To uncompress zip file
+    decompressZipFile(appname, fileName, password);
 
-// To validate email
-validateEmail(edittext);
+    // To validate email
+    validateEmail(edittext);
 ```
 LICENSE
 ----

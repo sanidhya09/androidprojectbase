@@ -68,16 +68,26 @@
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
-          <provider editor-type-id="MarkdownFxPreviewEditor">
+          <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+          <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.9372129">
-                <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+              <first_editor vertical-scroll-proportion="0.8346095">
+                <caret line="78" column="19" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UtilitySingleton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilitySingleton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="86" column="32" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -3439,7 +3449,7 @@
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6689373" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32561308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32561308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -3912,17 +3922,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilitySingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7454031">
-          <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
-          <folding>
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/network/RestService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15275814">
@@ -3939,6 +3938,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilitySingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="86" column="32" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.27298445">
@@ -3948,13 +3955,13 @@
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
-      <provider editor-type-id="MarkdownFxPreviewEditor">
+      <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.9372129">
-            <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+          <first_editor vertical-scroll-proportion="0.8346095">
+            <caret line="78" column="19" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
             <folding />
           </first_editor>
           <second_editor />
