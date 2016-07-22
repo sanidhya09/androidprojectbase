@@ -166,7 +166,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
 //            }
 //        });
 
-        appApplication.retroFitUtil.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "read", "pdf", this);
+  //      appApplication.retroFitUtil.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "read", "pdf", this);
     }
 
     @Override

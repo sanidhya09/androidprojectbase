@@ -62,8 +62,23 @@ Usage
   
    // create your own RestService class
      RestService restService = retroFitUtil.getRetrofit().create(RestService.class);
+     
+     // download large files
+     retroFitUtil.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "read", "pdf", this);
 ```
 
+3. UtilitySingleton for rapid development:
+
+```
+// To check internet connection
+isOnline();
+
+// To uncompress zip file
+decompressZipFile(appname, fileName, password);
+
+// To validate email
+validateEmail(edittext);
+```
 LICENSE
 ----
 

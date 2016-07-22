@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Environment;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -12,6 +13,10 @@ import android.widget.Toast;
 import com.squareup.otto.Bus;
 import com.squareup.otto.ThreadEnforcer;
 
+import net.lingala.zip4j.core.ZipFile;
+import net.lingala.zip4j.exception.ZipException;
+
+import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -93,7 +98,32 @@ public class UtilitySingleton {
         }
     }
 
+    public boolean isStringNotNullAndNotEmpty(String str) {
+        if (str == null || str.trim().length() <= 0) {
+            return false;
+        }
+
+        return true;
+    }
+
     public Bus busProvider() {
         return new Bus(ThreadEnforcer.ANY);
+    }
+
+    public void decompressZipFile(String appName, String filename, String password) {
+        String filePath = Environment.getExternalStorageDirectory() + "/" + appName;
+
+        try {
+            File src = new File(filePath, filename);
+            ZipFile zipFile = new ZipFile(src);
+
+            if (zipFile.isEncrypted())
+                zipFile.setPassword(password);
+
+            zipFile.extractAll(filePath);
+
+        } catch (ZipException e) {
+            e.printStackTrace();
+        }
     }
 }
