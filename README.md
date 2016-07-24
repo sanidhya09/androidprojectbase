@@ -33,7 +33,7 @@ Usage
     
 ```
         // To start Location Services
-        final LocationUtil locationUtil = LocationUtil.getInstatnce();
+        final LocationUtil locationUtil = LocationUtil.INSTANCE;
                 locationUtil.init(this);
         
                 LocationUtil.LocationConfig locationConfig = new LocationUtil.LocationConfig();

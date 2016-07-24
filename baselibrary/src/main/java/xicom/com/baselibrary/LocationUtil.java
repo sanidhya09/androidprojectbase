@@ -21,10 +21,10 @@ import java.util.Locale;
 /**
  * Created by sanidhya on 20/7/16.
  */
-public class LocationUtil implements
+public enum LocationUtil implements
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
+    INSTANCE;
 
-    private static final LocationUtil locationUtil = new LocationUtil();
     protected static final String TAG = "location-updates-sample";
     GetLocationUpdates getLocationUpdates;
     private int priority = LocationRequest.PRIORITY_HIGH_ACCURACY;
@@ -38,10 +38,6 @@ public class LocationUtil implements
     private Context context;
 
     private LocationUtil() {
-    }
-
-    public static LocationUtil getInstance() {
-        return locationUtil;
     }
 
     public static class LocationConfig {

@@ -56,7 +56,7 @@ public class LocationActivity extends BaseActivity {
         mRequestingLocationUpdates = false;
         mLastUpdateTime = "";
 
-        locationUtil = LocationUtil.getInstance();
+        locationUtil = LocationUtil.INSTANCE;
         locationUtil.init(this);
 
         locationUtil.setOnLocationChangeInterface(new LocationUtil.GetLocationUpdates() {
