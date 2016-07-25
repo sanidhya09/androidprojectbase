@@ -23,8 +23,8 @@ import java.util.regex.Pattern;
 /**
  * Created by sanidhya on 14/1/15.
  */
-public class UtilitySingleton {
-
+public enum UtilitySingleton {
+    INSTANCE;
     private Context context;
 
     public void setContext(Context context) {

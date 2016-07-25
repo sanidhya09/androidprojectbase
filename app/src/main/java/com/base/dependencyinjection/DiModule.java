@@ -15,12 +15,12 @@ public class DiModule {
     @Provides
     @Singleton
     UtilitySingleton provideUtilitySingleton() {
-        return new UtilitySingleton();
+        return UtilitySingleton.INSTANCE;
     }
 
     @Provides
     @Singleton
     RetroFitUtil provideRetroFitUtil() {
-        return new RetroFitUtil("https://pubs.usgs.gov");
+        return RetroFitUtil.INSTANCE;
     }
 }

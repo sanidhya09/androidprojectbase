@@ -24,6 +24,7 @@ public class AppApplication extends Application {
         super.onCreate();
         diComponent = DaggerDiComponent.builder().diModule(new DiModule()).build();
         diComponent.inject(this);
+        retroFitUtil.setBaseUrl("https://pubs.usgs.gov/");
     }
 
     public RestService getRestService() {

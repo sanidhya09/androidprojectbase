@@ -30,9 +30,9 @@ import java.util.Collection;
  * Created by Sanidhya09 on 18/07/2016.
  * http://www.programcreek.com/java-api-examples/index.php?source_dir=LOL-Chat-master/app/src/main/java/com/github/theholywaffle/lolchatapi/wrapper/Friend.java
  */
-public class XMPPUtil {
-
-    //    private static final String DOMAIN = "xmpp.jp";
+public enum XMPPUtil {
+    INSTANCE;
+//    private static final String DOMAIN = "xmpp.jp";
 //    private static final String HOST = "xmpp.jp";
 //    private static final int PORT = 5222;
     AbstractXMPPConnection connection;

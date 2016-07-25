@@ -6,6 +6,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -37,31 +38,28 @@ public enum LocationUtil implements
     protected Location mCurrentLocation;
     private Context context;
 
-    private LocationUtil() {
-    }
-
     public static class LocationConfig {
         private long interval;
         private int priority;
 
-        public LocationConfig setInterval(long interval) {
+        public LocationConfig setInterval(@NonNull long interval) {
             this.interval = interval;
             return this;
         }
 
-        public LocationConfig setPriority(int priority) {
+        public LocationConfig setPriority(@NonNull int priority) {
             this.priority = priority;
             return this;
         }
     }
 
-    public LocationUtil setConfig(LocationConfig locationConfig) {
+    public LocationUtil setConfig(@NonNull LocationConfig locationConfig) {
         interval = locationConfig.interval;
         priority = locationConfig.priority;
         return this;
     }
 
-    public LocationUtil init(Context locationActivity) {
+    public LocationUtil init(@NonNull Context locationActivity) {
         this.context = locationActivity;
         buildGoogleApiClient();
         return this;

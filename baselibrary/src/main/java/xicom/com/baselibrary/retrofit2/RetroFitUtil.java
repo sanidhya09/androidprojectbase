@@ -25,13 +25,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by sanidhya on 20/7/16.
  */
-public class RetroFitUtil {
+public enum RetroFitUtil {
+    INSTANCE;
     private Retrofit retrofit;
     private String baseUrl;
     public static final String TAG = RetroFitUtil.class.getName();
 
-    public RetroFitUtil(String baseUrl) {
+    public RetroFitUtil setBaseUrl(String baseUrl) {
         this.baseUrl = baseUrl;
+        return this;
     }
 
     public Retrofit getRetrofit() {

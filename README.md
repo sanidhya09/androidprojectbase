@@ -57,14 +57,15 @@ Usage
 ##### 2. For RestServices RetroFit2 :
 
 ```
-   // initializes retrofit service
-      RetroFitUtil retroFitUtil = new RetroFitUtil("Your base URL Here ");
+   // initializes retrofit service in application class or via dependency injection (To be initialized once)
+      RetroFitUtil retroFitUtil = RetroFitUtil.INSTANCE;
+      retroFitUtil.setBaseUrl("base URL goes here. Eg https://");
   
    // create your own RestService class
      RestService restService = retroFitUtil.getRetrofit().create(RestService.class);
      
      // download large files
-     retroFitUtil.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "read", "pdf", this);
+     retroFitUtil.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "file name", "file extension", this);
 ```
 
 ##### 3. UtilitySingleton for rapid development:
