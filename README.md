@@ -30,24 +30,33 @@ How to use
 Usage
 ----
 ##### 1. For Location Services :
-    
-```
-        // To start Location Services
-        
-        //optional configuration
-        LocationUtil.LocationConfig locationConfig = new LocationUtil.LocationConfig();
+
+### Starting
+
+For starting the location service:
+
+````java
+LocationUtil.LocationConfig locationConfig = new LocationUtil.LocationConfig();
                     locationConfig.setInterval(5000).setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         
-        LocationUtil.with(context).location().setConfig(locationConfig).startLocationUpdates(new LocationUtil.LocationControl.GetLocationUpdates() {
+LocationUtil.with(context).location().setConfig(locationConfig).startLocationUpdates(new LocationUtil.LocationControl.GetLocationUpdates() {
                         @Override
                         public void getLocation(Location location) {
                   
                         }
                     });
+````
 
-        // To Stop Location Services
-                LocationUtil.with(context).location().stopLocationUpdates();
-        
+### Stopping
+
+For stopping the location just use the stop method.
+
+````java
+LocationUtil.with(context).location().stopLocationUpdates();
+````
+      
+                
+```        
         // To get the human readable address
                 List<Address> address = LocationUtil.with(context).location().getAddress(location.getLatitude(), location.getLongitude());
         
