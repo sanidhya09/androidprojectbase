@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.base.R;
 
 import xicom.com.baselibrary.locations.LocationUtil;
+import xicom.com.baselibrary.locations.OnLocationUpdatedListener;
 
 import com.base.core.BaseActivity;
 import com.google.android.gms.location.LocationRequest;
@@ -62,18 +63,15 @@ public class LocationActivity extends BaseActivity {
             mRequestingLocationUpdates = true;
             setButtonsEnabledState();
 
-            LocationUtil.LocationConfig locationConfig = new LocationUtil.LocationConfig();
-            locationConfig.setInterval(5000).setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-
-            LocationUtil.with(context).location().setConfig(locationConfig).startLocationUpdates(new LocationUtil.LocationControl.GetLocationUpdates() {
+            LocationUtil.with(context).location().start(new OnLocationUpdatedListener() {
                 @Override
                 public void getLocation(Location location) {
                     mLatitudeTextView.setText(String.format("%s: %f", mLatitudeLabel,
                             location.getLatitude()));
                     mLongitudeTextView.setText(String.format("%s: %f", mLongitudeLabel,
                             location.getLongitude()));
-                    List<Address> address = LocationUtil.with(context).location().getAddress(location.getLatitude(), location.getLongitude());
-                    mLastUpdateTimeTextView.setText(address.get(0).getAddressLine(0));
+//                    List<Address> address = LocationUtil.with(context).location().getAddress(location.getLatitude(), location.getLongitude());
+//                    mLastUpdateTimeTextView.setText(address.get(0).getAddressLine(0));
                 }
             });
 
@@ -84,7 +82,7 @@ public class LocationActivity extends BaseActivity {
         if (mRequestingLocationUpdates) {
             mRequestingLocationUpdates = false;
             setButtonsEnabledState();
-            LocationUtil.with(context).location().stopLocationUpdates();
+            LocationUtil.with(context).location().stop();
         }
     }
 

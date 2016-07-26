@@ -36,6 +36,7 @@ import com.base.fragments.Camera2BasicFragment;
 import com.base.gcm.QuickstartPreferences;
 import com.base.gcm.RegistrationIntentService;
 import com.base.models.Contributor;
+import com.google.android.gms.location.Geofence;
 
 import java.util.Arrays;
 import java.util.List;
@@ -43,6 +44,10 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import xicom.com.baselibrary.geofencing.GeoFenceUtil;
+import xicom.com.baselibrary.geofencing.GeofenceModel;
+import xicom.com.baselibrary.geofencing.providers.OnGeofencingTransitionListener;
+import xicom.com.baselibrary.geofencing.providers.TransitionGeofence;
 
 public class MainActivity extends BaseActivity implements NavigationDrawerAdapter.ItmClicked {
     private DrawerLayout mDrawerLayout;
@@ -166,7 +171,31 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
 //            }
 //        });
 
-  //      appApplication.retroFitUtil.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "read1", "pdf", this);
+        //      appApplication.retroFitUtil.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "read1", "pdf", this);
+
+//        GeofenceModel mestalla = new GeofenceModel.Builder("id_mestalla")
+//                .setTransition(Geofence.GEOFENCE_TRANSITION_DWELL)
+//                .setLatitude(28.62115)
+//                .setLongitude(77.081824)
+//                .setRadius(200)
+//                .build();
+//
+//        GeofenceModel cuenca = new GeofenceModel.Builder("id_cuenca")
+//                .setTransition(Geofence.GEOFENCE_TRANSITION_EXIT)
+//                .setLatitude(40.0703925)
+//                .setLongitude(-2.1374161999999615)
+//                .setRadius(25000)
+//                .build();
+//
+//        GeoFenceUtil.with(context).geofencing()
+//                .add(mestalla)
+//                .add(cuenca)
+//                .start(new OnGeofencingTransitionListener() {
+//                    @Override
+//                    public void onGeofenceTransition(TransitionGeofence transitionGeofence) {
+//                        utilitySingleton.ShowToast("XX = " + transitionGeofence.getGeofenceModel().getRequestId());
+//                    }
+//                });
     }
 
     @Override
