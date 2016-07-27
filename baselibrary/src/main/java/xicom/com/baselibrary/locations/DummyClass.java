@@ -7,12 +7,12 @@ import android.content.Context;
  */
 public class DummyClass implements LocationProviderInterface {
     @Override
-    public void init(Context context) {
+    public void init(Context context, boolean isOneFix, LocationConfig locationConfig) {
 
     }
 
     @Override
-    public void start(OnLocationUpdatedListener listener) {
+    public void setOnLocationUpdateListener(OnLocationUpdatedListener listener) {
 
     }
 

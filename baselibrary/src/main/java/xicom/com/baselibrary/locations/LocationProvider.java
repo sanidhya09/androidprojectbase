@@ -1,14 +1,22 @@
 package xicom.com.baselibrary.locations;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -27,30 +35,28 @@ public class LocationProvider implements
     private long FASTESTUPDATEINTERVAL =
             INTERVAL / 2;
 
-    protected GoogleApiClient mGoogleApiClient;
+    protected static GoogleApiClient mGoogleApiClient;
     protected LocationRequest mLocationRequest;
     protected Location mCurrentLocation;
 
     private final LocationUtil locationUtil;
+    private boolean isOneFix;
 
     public LocationProvider(LocationUtil locationUtil) {
         this.locationUtil = locationUtil;
     }
 
-    public LocationProvider setConfig(LocationConfig locationConfig) {
-        INTERVAL = locationConfig.interval;
-        PRIORITY = locationConfig.priority;
-        return this;
-    }
-
     protected synchronized void buildGoogleApiClient() {
         Log.i(TAG, "Building GoogleApiClient");
-        mGoogleApiClient = new GoogleApiClient.Builder(locationUtil.mContext)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .addApi(LocationServices.API)
-                .build();
+        if (mGoogleApiClient == null)
+            mGoogleApiClient = new GoogleApiClient.Builder(locationUtil.mContext)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
         createLocationRequest();
+        if (mGoogleApiClient != null && !mGoogleApiClient.isConnected())
+            mGoogleApiClient.connect();
     }
 
     protected void createLocationRequest() {
@@ -58,19 +64,43 @@ public class LocationProvider implements
         mLocationRequest.setInterval(INTERVAL);
         mLocationRequest.setFastestInterval(FASTESTUPDATEINTERVAL);
         mLocationRequest.setPriority(PRIORITY);
+        if (isOneFix)
+            mLocationRequest.setNumUpdates(1);
     }
 
     @Override
     public void onConnected(Bundle bundle) {
         Log.i(TAG, "Connected to GoogleApiClient");
+        if ((ContextCompat.checkSelfPermission(locationUtil.mContext,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED)|| ContextCompat.checkSelfPermission(locationUtil.mContext,
+                Manifest.permission.ACCESS_COARSE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            PendingResult<Status> statusPendingResult = LocationServices.FusedLocationApi.requestLocationUpdates(
+                    mGoogleApiClient, mLocationRequest, this);
+            statusPendingResult.setResultCallback(new ResultCallback<Status>() {
+                @Override
+                public void onResult(@NonNull Status status) {
+                    if (status.isSuccess()) {
 
-        if (mCurrentLocation == null) {
-            mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-            if (mCurrentLocation != null) {
-                Log.i(TAG, "mCurrentLocation::::" + mCurrentLocation.getLatitude());
-                mLocationUpdates.getLocation(mCurrentLocation);
-            }
+                    } else {
+                        if (mCurrentLocation == null) {
+                            mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+                            if (mCurrentLocation != null) {
+                                Log.i(TAG, "mCurrentLocation::::" + mCurrentLocation.getLatitude());
+                                mLocationUpdates.getLocation(mCurrentLocation);
+                                if (isOneFix) {
+                                    stop();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }else{
+            Toast.makeText(locationUtil.mContext, "Check for Location based permissions", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     @Override
@@ -87,6 +117,9 @@ public class LocationProvider implements
         if (mCurrentLocation != null) {
             Log.i(TAG, "Location::::" + mCurrentLocation.getLatitude());
             mLocationUpdates.getLocation(mCurrentLocation);
+            if (isOneFix) {
+                stop();
+            }
         }
     }
 
@@ -108,20 +141,23 @@ public class LocationProvider implements
     }
 
     @Override
-    public void init(Context context) {
+    public void init(Context context, boolean isOneFix, LocationConfig locationConfig) {
+        this.isOneFix = isOneFix;
+        if (locationConfig != null) {
+            INTERVAL = locationConfig.interval;
+            PRIORITY = locationConfig.priority;
+        }
+
         buildGoogleApiClient();
     }
 
     @Override
-    public void start(OnLocationUpdatedListener listener) {
+    public void setOnLocationUpdateListener(OnLocationUpdatedListener listener) {
         this.mLocationUpdates = listener;
-        if (mGoogleApiClient.isConnected()) {
-            createLocationRequest();
-            LocationServices.FusedLocationApi.requestLocationUpdates(
-                    mGoogleApiClient, mLocationRequest, this);
-        } else {
-            mGoogleApiClient.connect();
-        }
+//        if (mGoogleApiClient.isConnected()) {
+//            LocationServices.FusedLocationApi.requestLocationUpdates(
+//                    mGoogleApiClient, mLocationRequest, this);
+//        }
     }
 
     @Override

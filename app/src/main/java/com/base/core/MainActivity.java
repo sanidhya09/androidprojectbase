@@ -190,7 +190,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
 //        GeoFenceUtil.with(context).geofencing()
 //                .add(mestalla)
 //                .add(cuenca)
-//                .start(new OnGeofencingTransitionListener() {
+//                .setOnLocationUpdateListener(new OnGeofencingTransitionListener() {
 //                    @Override
 //                    public void onGeofenceTransition(TransitionGeofence transitionGeofence) {
 //                        utilitySingleton.ShowToast("XX = " + transitionGeofence.getGeofenceModel().getRequestId());

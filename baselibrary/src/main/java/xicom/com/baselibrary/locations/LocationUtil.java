@@ -8,10 +8,12 @@ import android.content.Context;
  */
 public class LocationUtil {
     public Context mContext;
+    private static LocationProviderInterface locationProvider;
 
     private LocationUtil(Context context) {
         mContext = context;
     }
+
 
     public static LocationUtil with(Context context) {
         return new Builder(context).build();
@@ -31,7 +33,9 @@ public class LocationUtil {
 
 
     public LocationControl location() {
-        return location(new LocationProvider(this));
+        if (locationProvider == null)
+            locationProvider = new LocationProvider(this);
+        return location(locationProvider);
     }
 
     public LocationControl location(LocationProviderInterface provider) {
@@ -42,21 +46,31 @@ public class LocationUtil {
 
         private final LocationUtil locationUtil;
         private LocationProviderInterface provider;
+        private boolean isOneFix;
+        private LocationConfig locationConfig;
 
         public LocationControl(LocationUtil locationUtil, LocationProviderInterface provider) {
             this.locationUtil = locationUtil;
             this.provider = provider;
         }
 
-        public void connect() {
-            provider.init(locationUtil.mContext);
+        public LocationControl oneFix(){
+            isOneFix = true;
+            return this;
         }
 
-        public void start(OnLocationUpdatedListener onLocationUpdatedListener){
-            provider.start(onLocationUpdatedListener);
+        public LocationControl setConfig(LocationConfig locationConfig){
+            this.locationConfig = locationConfig;
+            return this;
         }
 
-        public void stop(){
+        public void start(OnLocationUpdatedListener onLocationUpdatedListener) {
+            provider.setOnLocationUpdateListener(onLocationUpdatedListener);
+            provider.init(locationUtil.mContext, isOneFix, locationConfig);
+
+        }
+
+        public void stop() {
             provider.stop();
         }
     }
