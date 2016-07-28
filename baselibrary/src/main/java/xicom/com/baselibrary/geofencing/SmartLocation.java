@@ -7,35 +7,36 @@ import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-import xicom.com.baselibrary.geofencing.providers.GeofencingProvider;
-import xicom.com.baselibrary.geofencing.providers.OnGeofencingTransitionListener;
+import xicom.com.baselibrary.geofencing.model.GeofenceModel;
+import xicom.com.baselibrary.geofencing.providers.GeofencingGooglePlayServicesProvider;
+import xicom.com.baselibrary.geofencing.utils.Logger;
+import xicom.com.baselibrary.geofencing.utils.LoggerFactory;
+
 
 /**
- * Created by sanidhya on 25/7/16.
+ * Managing class for SmartLocation library.
  */
-public class GeoFenceUtil {
+public class SmartLocation {
 
     private Context context;
+    private Logger logger;
+    private boolean preInitialize;
 
-    private GeoFenceUtil(Context context) {
+    /**
+     * Creates the SmartLocation basic instance.
+     *
+     * @param context       execution context
+     * @param logger        logger interface
+     * @param preInitialize TRUE (default) if we want to instantiate directly the default providers. FALSE if we want to initialize them ourselves.
+     */
+    private SmartLocation(Context context, Logger logger, boolean preInitialize) {
         this.context = context;
+        this.logger = logger;
+        this.preInitialize = preInitialize;
     }
 
-    public static GeoFenceUtil with(Context context) {
-        return new Builder(context).build();
-    }
-
-    public static class Builder {
-        private final Context context;
-
-        public Builder(@NonNull Context context) {
-            this.context = context;
-        }
-
-        public GeoFenceUtil build() {
-            return new GeoFenceUtil(context);
-        }
-
+    public static SmartLocation with(Context context) {
+        return new Builder(context).logging(true).preInitialize(true).build();
     }
 
     /**
@@ -54,19 +55,50 @@ public class GeoFenceUtil {
     }
 
 
+    public static class Builder {
+        private final Context context;
+        private boolean loggingEnabled;
+        private boolean preInitialize;
+
+        public Builder(@NonNull Context context) {
+            this.context = context;
+            this.loggingEnabled = false;
+            this.preInitialize = true;
+        }
+
+        public Builder logging(boolean enabled) {
+            this.loggingEnabled = enabled;
+            return this;
+        }
+
+        public Builder preInitialize(boolean enabled) {
+            this.preInitialize = enabled;
+            return this;
+        }
+
+        public SmartLocation build() {
+            return new SmartLocation(context, LoggerFactory.buildLogger(loggingEnabled), preInitialize);
+        }
+
+    }
+
     public static class GeofencingControl {
         private static final Map<Context, GeofencingProvider> MAPPING = new WeakHashMap<>();
 
+        private final SmartLocation smartLocation;
         private GeofencingProvider provider;
 
-        public GeofencingControl(@NonNull GeoFenceUtil smartLocation, @NonNull GeofencingProvider geofencingProvider) {
+        public GeofencingControl(@NonNull SmartLocation smartLocation, @NonNull GeofencingProvider geofencingProvider) {
+            this.smartLocation = smartLocation;
 
             if (!MAPPING.containsKey(smartLocation.context)) {
                 MAPPING.put(smartLocation.context, geofencingProvider);
             }
             provider = MAPPING.get(smartLocation.context);
 
-            provider.init(smartLocation.context);
+            if (smartLocation.preInitialize) {
+                provider.init(smartLocation.context, smartLocation.logger);
+            }
         }
 
         public GeofencingControl add(@NonNull GeofenceModel geofenceModel) {
@@ -100,4 +132,6 @@ public class GeoFenceUtil {
             provider.stop();
         }
     }
+
+
 }

@@ -1,7 +1,10 @@
-package xicom.com.baselibrary.geofencing;
+package xicom.com.baselibrary.geofencing.model;
 
 import com.google.android.gms.location.Geofence;
 
+/**
+ * Created by sanidhya on 4/1/15.
+ */
 public class GeofenceModel {
     private String requestId;
     private double latitude;

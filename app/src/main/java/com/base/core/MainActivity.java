@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,6 +27,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.base.R;
 import com.base.activities.AppSettings;
@@ -44,10 +46,11 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import xicom.com.baselibrary.geofencing.GeoFenceUtil;
-import xicom.com.baselibrary.geofencing.GeofenceModel;
-import xicom.com.baselibrary.geofencing.providers.OnGeofencingTransitionListener;
-import xicom.com.baselibrary.geofencing.providers.TransitionGeofence;
+import xicom.com.baselibrary.geofencing.OnGeofencingTransitionListener;
+import xicom.com.baselibrary.geofencing.SmartLocation;
+import xicom.com.baselibrary.geofencing.model.GeofenceModel;
+import xicom.com.baselibrary.geofencing.utils.TransitionGeofence;
+
 
 public class MainActivity extends BaseActivity implements NavigationDrawerAdapter.ItmClicked {
     private DrawerLayout mDrawerLayout;
@@ -173,29 +176,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
 
         //      appApplication.retroFitUtil.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "read1", "pdf", this);
 
-//        GeofenceModel mestalla = new GeofenceModel.Builder("id_mestalla")
-//                .setTransition(Geofence.GEOFENCE_TRANSITION_DWELL)
-//                .setLatitude(28.62115)
-//                .setLongitude(77.081824)
-//                .setRadius(200)
-//                .build();
-//
-//        GeofenceModel cuenca = new GeofenceModel.Builder("id_cuenca")
-//                .setTransition(Geofence.GEOFENCE_TRANSITION_EXIT)
-//                .setLatitude(40.0703925)
-//                .setLongitude(-2.1374161999999615)
-//                .setRadius(25000)
-//                .build();
-//
-//        GeoFenceUtil.with(context).geofencing()
-//                .add(mestalla)
-//                .add(cuenca)
-//                .setOnLocationUpdateListener(new OnGeofencingTransitionListener() {
-//                    @Override
-//                    public void onGeofenceTransition(TransitionGeofence transitionGeofence) {
-//                        utilitySingleton.ShowToast("XX = " + transitionGeofence.getGeofenceModel().getRequestId());
-//                    }
-//                });
+
     }
 
     @Override

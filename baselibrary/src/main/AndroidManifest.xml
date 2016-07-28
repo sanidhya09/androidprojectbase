@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
         <service
-            android:name=".geofencing.GeofencingGooglePlayServicesProvider$GeofencingService"
+            android:name=".geofencing.providers.GeofencingGooglePlayServicesProvider$GeofencingService"
             android:exported="false" />
 
     </application>

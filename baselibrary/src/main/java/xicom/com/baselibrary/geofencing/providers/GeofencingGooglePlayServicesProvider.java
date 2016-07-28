@@ -1,4 +1,4 @@
-package xicom.com.baselibrary.geofencing;
+package xicom.com.baselibrary.geofencing.providers;
 
 import android.app.Activity;
 import android.app.IntentService;
@@ -10,7 +10,6 @@ import android.content.IntentFilter;
 import android.content.IntentSender;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -24,15 +23,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import xicom.com.baselibrary.geofencing.providers.GeofencingProvider;
-import xicom.com.baselibrary.geofencing.providers.GeofencingStore;
-import xicom.com.baselibrary.geofencing.providers.GooglePlayServicesListener;
-import xicom.com.baselibrary.geofencing.providers.OnGeofencingTransitionListener;
-import xicom.com.baselibrary.geofencing.providers.TransitionGeofence;
+import xicom.com.baselibrary.geofencing.GeofencingProvider;
+import xicom.com.baselibrary.geofencing.GeofencingStore;
+import xicom.com.baselibrary.geofencing.OnGeofencingTransitionListener;
+import xicom.com.baselibrary.geofencing.model.GeofenceModel;
+import xicom.com.baselibrary.geofencing.utils.GooglePlayServicesListener;
+import xicom.com.baselibrary.geofencing.utils.Logger;
+import xicom.com.baselibrary.geofencing.utils.TransitionGeofence;
 
 
 /**
- * Created by sanidhya on 3/1/15.
+ * Created by sanidhya on 28/07/2016
  */
 public class GeofencingGooglePlayServicesProvider implements GeofencingProvider, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, ResultCallback<Status> {
 
@@ -47,6 +48,7 @@ public class GeofencingGooglePlayServicesProvider implements GeofencingProvider,
     private final List<String> geofencesToRemove = Collections.synchronizedList(new ArrayList<String>());
 
     private GoogleApiClient client;
+    private Logger logger;
     private OnGeofencingTransitionListener listener;
     private GeofencingStore geofencingStore;
     private Context context;
@@ -65,8 +67,9 @@ public class GeofencingGooglePlayServicesProvider implements GeofencingProvider,
 
 
     @Override
-    public void init(@NonNull Context context) {
+    public void init(@NonNull Context context, Logger logger) {
         this.context = context;
+        this.logger = logger;
 
         geofencingStore = new GeofencingStore(context);
 
@@ -145,7 +148,7 @@ public class GeofencingGooglePlayServicesProvider implements GeofencingProvider,
         context.registerReceiver(geofencingReceiver, intentFilter);
 
         if (!client.isConnected()) {
-            Log.d("1", "still not connected - scheduled setOnLocationUpdateListener when connection is ok");
+            logger.d("still not connected - scheduled start when connection is ok");
         } else if (stopped) {
             client.connect();
             stopped = false;
@@ -154,21 +157,21 @@ public class GeofencingGooglePlayServicesProvider implements GeofencingProvider,
 
     @Override
     public void stop() {
-        Log.d("1","stop");
+        logger.d("stop");
         if (client.isConnected()) {
             client.disconnect();
         }
         try {
             context.unregisterReceiver(geofencingReceiver);
         } catch (IllegalArgumentException e) {
-            Log.d("1","Silenced 'receiver not registered' stuff (calling stop more times than necessary did this)");
+            logger.d("Silenced 'receiver not registered' stuff (calling stop more times than necessary did this)");
         }
         stopped = true;
     }
 
     @Override
     public void onConnected(Bundle bundle) {
-        Log.d("1","onConnected");
+        logger.d("onConnected");
 
         // TODO wait until the connection is done and retry
         if (client.isConnected()) {
@@ -189,7 +192,7 @@ public class GeofencingGooglePlayServicesProvider implements GeofencingProvider,
 
     @Override
     public void onConnectionSuspended(int i) {
-        Log.d("1","onConnectionSuspended " + i);
+        logger.d("onConnectionSuspended " + i);
         if (googlePlayServicesListener != null) {
             googlePlayServicesListener.onConnectionSuspended(i);
         }
@@ -197,7 +200,7 @@ public class GeofencingGooglePlayServicesProvider implements GeofencingProvider,
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Log.d("1","onConnectionFailed");
+        logger.d("onConnectionFailed");
         if (googlePlayServicesListener != null) {
             googlePlayServicesListener.onConnectionFailed(connectionResult);
         }
@@ -208,7 +211,7 @@ public class GeofencingGooglePlayServicesProvider implements GeofencingProvider,
         @Override
         public void onReceive(Context context, Intent intent) {
             if (BROADCAST_INTENT_ACTION.equals(intent.getAction()) && intent.hasExtra(GEOFENCES_EXTRA_ID)) {
-                Log.d("1","Received geofencing event");
+                logger.d("Received geofencing event");
                 final int transitionType = intent.getIntExtra(TRANSITION_EXTRA_ID, -1);
                 final List<String> geofencingIds = intent.getStringArrayListExtra(GEOFENCES_EXTRA_ID);
                 for (final String geofenceId : geofencingIds) {
@@ -217,7 +220,7 @@ public class GeofencingGooglePlayServicesProvider implements GeofencingProvider,
                     if (geofenceModel != null) {
                         listener.onGeofenceTransition(new TransitionGeofence(geofenceModel, transitionType));
                     } else {
-                        Log.w("1","Tried to retrieve geofence " + geofenceId + " but it was not in the store");
+                        logger.w("Tried to retrieve geofence " + geofenceId + " but it was not in the store");
                     }
 
                 }
@@ -254,17 +257,18 @@ public class GeofencingGooglePlayServicesProvider implements GeofencingProvider,
     @Override
     public void onResult(@NonNull Status status) {
         if (status.isSuccess()) {
-            Log.d("1","Geofencing update request successful");
+            logger.d("Geofencing update request successful");
         } else if (status.hasResolution() && context instanceof Activity) {
-            Log.w("1",
+            logger.w(
                     "Unable to register, but we can solve this - will startActivityForResult expecting result code " + RESULT_CODE + " (if received, please try again)");
             try {
                 status.startResolutionForResult((Activity) context, RESULT_CODE);
             } catch (IntentSender.SendIntentException e) {
+                logger.e(e, "problem with startResolutionForResult");
             }
         } else {
             // No recovery. Weep softly or inform the user.
-            Log.e("1","Registering failed: " + status.getStatusMessage());
+            logger.e("Registering failed: " + status.getStatusMessage());
         }
     }
 

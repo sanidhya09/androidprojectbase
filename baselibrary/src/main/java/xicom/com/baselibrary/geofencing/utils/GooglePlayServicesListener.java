@@ -1,4 +1,4 @@
-package xicom.com.baselibrary.geofencing.providers;
+package xicom.com.baselibrary.geofencing.utils;
 
 /**
  * Created by mrm on 14/2/15.

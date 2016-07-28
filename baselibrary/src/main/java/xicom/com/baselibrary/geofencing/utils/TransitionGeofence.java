@@ -1,7 +1,11 @@
-package xicom.com.baselibrary.geofencing.providers;
+package xicom.com.baselibrary.geofencing.utils;
 
-import xicom.com.baselibrary.geofencing.GeofenceModel;
 
+import xicom.com.baselibrary.geofencing.model.GeofenceModel;
+
+/**
+ * Wraps Geofences and Transitions
+ */
 public class TransitionGeofence {
     private GeofenceModel geofenceModel;
     private int transitionType;

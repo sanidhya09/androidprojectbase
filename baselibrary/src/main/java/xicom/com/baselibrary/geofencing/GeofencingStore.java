@@ -1,14 +1,16 @@
-package xicom.com.baselibrary.geofencing.providers;
+package xicom.com.baselibrary.geofencing;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 
-import xicom.com.baselibrary.geofencing.GeofenceModel;
+import xicom.com.baselibrary.geofencing.model.GeofenceModel;
+import xicom.com.baselibrary.geofencing.utils.Store;
+
 
 /**
- * Created by sanidhya on 3/1/15.
+ * Created by mrm on 3/1/15.
  */
 public class GeofencingStore implements Store<GeofenceModel> {
 
