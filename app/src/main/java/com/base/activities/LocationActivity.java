@@ -73,7 +73,7 @@ public class LocationActivity extends BaseActivity {
                             location.getLatitude()));
                     mLongitudeTextView.setText(String.format("%s: %f", mLongitudeLabel,
                             location.getLongitude()));
-//                    List<Address> address = LocationUtil.with(context).location().getAddress(location.getLatitude(), location.getLongitude());
+                    List<Address> address = LocationUtil.with(context).location().state().getAddress(location.getLatitude(), location.getLongitude());
 //                    mLastUpdateTimeTextView.setText(address.get(0).getAddressLine(0));
                 }
             });

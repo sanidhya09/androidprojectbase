@@ -1,10 +1,16 @@
 package xicom.com.baselibrary.locations;
 
 import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.LocationManager;
 import android.os.Build;
 import android.provider.Settings;
 import android.text.TextUtils;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by sanidhya on 24/07/16.
@@ -66,4 +72,15 @@ public class LocationState {
         return !("0".equals(Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ALLOW_MOCK_LOCATION)));
     }
 
+    public List<Address> getAddress(double latitude, double longitude) {
+        Geocoder geocoder;
+        geocoder = new Geocoder(context, Locale.getDefault());
+
+        try {
+            return geocoder.getFromLocation(latitude, longitude, 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

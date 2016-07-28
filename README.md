@@ -33,18 +33,30 @@ Usage
 
 ### Starting
 
-For starting the location service:
+For starting the location service single time:
 
 ````java
-LocationUtil.LocationConfig locationConfig = new LocationUtil.LocationConfig();
-                    locationConfig.setInterval(5000).setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        
-LocationUtil.with(context).location().setConfig(locationConfig).startLocationUpdates(new LocationUtil.LocationControl.GetLocationUpdates() {
-                        @Override
-                        public void getLocation(Location location) {
-                  
-                        }
-                    });
+
+LocationUtil.with(context).location().oneFix().start(new OnLocationUpdatedListener() {
+@Override
+public void getLocation(Location location) {
+                   
+}
+});
+````
+
+For starting the location service (Periodic):
+
+````java
+LocationConfig locationConfig = new LocationConfig();
+locationConfig.setInterval(5000).setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+
+LocationUtil.with(context).location().setConfig(locationConfig).start(new OnLocationUpdatedListener() {
+@Override
+public void getLocation(Location location) {
+                   
+}
+});
 ````
 
 ### Stopping
@@ -52,31 +64,31 @@ LocationUtil.with(context).location().setConfig(locationConfig).startLocationUpd
 For stopping the location just use the stop method.
 
 ````java
-LocationUtil.with(context).location().stopLocationUpdates();
+LocationUtil.with(context).location().stop();
 ````
       
                 
 ```        
-        // To get the human readable address
-                List<Address> address = LocationUtil.with(context).location().getAddress(location.getLatitude(), location.getLongitude());
+// To get the human readable address
+List<Address> address = LocationUtil.with(context).location().state().getAddress(location.getLatitude(), location.getLongitude());
         
-         // Check if the location services are enabled
-                    LocationUtil.with(context).location().state().locationServicesEnabled();
+// Check if the location services are enabled
+LocationUtil.with(context).location().state().locationServicesEnabled();
         
-        // Check if any provider (network or gps) is enabled
-                    LocationUtil.with(context).location().state().isAnyProviderAvailable();
+// Check if any provider (network or gps) is enabled
+LocationUtil.with(context).location().state().isAnyProviderAvailable();
         
-        // Check if GPS is available
-                    LocationUtil.with(context).location().state().isGpsAvailable();
+// Check if GPS is available
+LocationUtil.with(context).location().state().isGpsAvailable();
         
-        // Check if Network is available
-                    LocationUtil.with(context).location().state().isNetworkAvailable();
+// Check if Network is available
+LocationUtil.with(context).location().state().isNetworkAvailable();
         
-        // Check if the passive provider is available
-                    LocationUtil.with(context).location().state().isPassiveAvailable();
+// Check if the passive provider is available
+LocationUtil.with(context).location().state().isPassiveAvailable();
         
-        // Check if the location is mocked
-                    LocationUtil.with(context).location().state().isMockSettingEnabled();
+// Check if the location is mocked
+LocationUtil.with(context).location().state().isMockSettingEnabled();
 ```
 
 ##### 2. For RestServices RetroFit2 :

@@ -73,6 +73,10 @@ public class LocationUtil {
         public void stop() {
             provider.stop();
         }
+
+        public LocationState state(){
+            return LocationState.with(locationUtil.mContext);
+        }
     }
 
 }
