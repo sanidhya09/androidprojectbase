@@ -7,12 +7,12 @@ import android.os.Bundle;
 
 import javax.inject.Inject;
 
-import xicom.com.baselibrary.UtilitySingleton;
+import xicom.com.baselibrary.UtilityClass;
 
 public class BaseActivity extends AppCompatActivity {
     public Context context;
     @Inject
-    public UtilitySingleton utilitySingleton;
+    public UtilityClass utilityClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,6 @@ public class BaseActivity extends AppCompatActivity {
         this.context = this;
         AppApplication appApplication = (AppApplication) getApplication();
         appApplication.diComponent.inject(this);
-        utilitySingleton.setContext(this);
+        utilityClass.setContext(this);
     }
 }

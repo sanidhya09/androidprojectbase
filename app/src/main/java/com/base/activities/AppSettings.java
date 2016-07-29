@@ -1,7 +1,6 @@
 package com.base.activities;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -13,19 +12,10 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.base.R;
 import com.base.core.BaseActivity;
 import com.base.models.Contributor;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 
 import rx.Observable;
 import rx.Observer;
@@ -44,7 +34,7 @@ public class AppSettings extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_settings);
         setUpToolBar();
-        utilitySingleton.ShowToast("Showing toast via dependency.");
+        utilityClass.ShowToast("Showing toast via dependency.");
 
         //MarshMallow Permission for location
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED

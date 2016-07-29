@@ -4,8 +4,7 @@ package com.base.dependencyinjection;
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
-import xicom.com.baselibrary.retrofit2.RetroFitUtil;
-import xicom.com.baselibrary.UtilitySingleton;
+import xicom.com.baselibrary.UtilityClass;
 
 /**
  * Created by sanidhya on 12/10/15.
@@ -14,13 +13,8 @@ import xicom.com.baselibrary.UtilitySingleton;
 public class DiModule {
     @Provides
     @Singleton
-    UtilitySingleton provideUtilitySingleton() {
-        return UtilitySingleton.INSTANCE;
+    UtilityClass provideUtilitySingleton() {
+        return new UtilityClass();
     }
 
-    @Provides
-    @Singleton
-    RetroFitUtil provideRetroFitUtil() {
-        return RetroFitUtil.INSTANCE;
-    }
 }

@@ -38,7 +38,6 @@ import com.base.fragments.Camera2BasicFragment;
 import com.base.gcm.QuickstartPreferences;
 import com.base.gcm.RegistrationIntentService;
 import com.base.models.Contributor;
-import com.google.android.gms.location.Geofence;
 
 import java.util.Arrays;
 import java.util.List;
@@ -46,10 +45,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import xicom.com.baselibrary.geofencing.OnGeofencingTransitionListener;
-import xicom.com.baselibrary.geofencing.SmartLocation;
-import xicom.com.baselibrary.geofencing.model.GeofenceModel;
-import xicom.com.baselibrary.geofencing.utils.TransitionGeofence;
+import xicom.com.baselibrary.retrofit2.RetroFitSingleton;
 
 
 public class MainActivity extends BaseActivity implements NavigationDrawerAdapter.ItmClicked {
@@ -153,30 +149,43 @@ public class MainActivity extends BaseActivity implements NavigationDrawerAdapte
 
     private void sampleRestService() {
         AppApplication appApplication = (AppApplication) getApplication();
-//        Call<List<Contributor>> call = appApplication.getRestService().contributors("square", "retrofit");
-//
-//        call.enqueue(new Callback<List<Contributor>>() {
+        Call<List<Contributor>> call = appApplication.getRestService().contributors("square", "retrofit");
+
+        call.enqueue(new Callback<List<Contributor>>() {
+            @Override
+            public void onResponse(Call<List<Contributor>> call, Response<List<Contributor>> response) {
+                if (response.isSuccessful()) {
+                    for (Contributor contributor : response.body()) {
+                        System.out.println(contributor.login + " (" + contributor.contributions + ")");
+                    }
+                } else {
+                    // error response, no access to resource?
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Contributor>> call, Throwable t) {
+
+            }
+        });
+
+        // RetroFitSingleton.INSTANCE.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "read1", "pdf", this);
+
+
+
+//        Call<SaveProduct> call = appApplication.getRestService().saveData(RetroFitSingleton.INSTANCE.getRequestString("01"), RetroFitSingleton.INSTANCE.uploadImagesRequestGenerator(files));
+//        call.enqueue(new Callback<SaveProduct>() {
 //            @Override
-//            public void onResponse(Call<List<Contributor>> call, Response<List<Contributor>> response) {
-//                if (response.isSuccessful()) {
-//                    for (Contributor contributor : response.body()) {
-//                        System.out.println(contributor.login + " (" + contributor.contributions + ")");
-//                    }
-//                } else {
-//                    // error response, no access to resource?
-//                }
+//            public void onResponse(Call<SaveProduct> call, retrofit2.Response<SaveProduct> response) {
 //
 //            }
 //
 //            @Override
-//            public void onFailure(Call<List<Contributor>> call, Throwable t) {
-//
+//            public void onFailure(Call<SaveProduct> call, Throwable t) {
+//                Log.e("savedataerror", t.getMessage());
 //            }
 //        });
-
-        //      appApplication.retroFitUtil.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "read1", "pdf", this);
-
-
     }
 
     @Override

@@ -24,6 +24,6 @@ public class FragmentA extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        utilitySingleton.ShowToast("View Created");
+        utilityClass.ShowToast("View Created");
     }
 }

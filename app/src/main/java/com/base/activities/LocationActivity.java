@@ -63,6 +63,7 @@ public class LocationActivity extends BaseActivity {
 
         mRequestingLocationUpdates = false;
         mLastUpdateTime = "";
+
         GeofenceModel mestalla = new GeofenceModel.Builder("id_mestalla")
                 .setTransition(Geofence.GEOFENCE_TRANSITION_EXIT)
                 .setLatitude(28.621127)

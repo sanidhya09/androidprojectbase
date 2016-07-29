@@ -2,9 +2,12 @@ package xicom.com.baselibrary;
 
 import android.app.Activity;
 import android.content.Context;
+import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -23,8 +26,8 @@ import java.util.regex.Pattern;
 /**
  * Created by sanidhya on 14/1/15.
  */
-public enum UtilitySingleton {
-    INSTANCE;
+public class UtilityClass {
+
     private Context context;
 
     public void setContext(Context context) {
@@ -125,5 +128,17 @@ public enum UtilitySingleton {
         } catch (ZipException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getPath(Uri uri, Context context)
+    {
+        String[] projection = { MediaStore.Images.Media.DATA };
+        Cursor cursor = context.getContentResolver().query(uri, projection, null, null, null);
+        if (cursor == null) return null;
+        int column_index =             cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        cursor.moveToFirst();
+        String s=cursor.getString(column_index);
+        cursor.close();
+        return s;
     }
 }

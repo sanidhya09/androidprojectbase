@@ -9,7 +9,7 @@ import android.support.v4.app.Fragment;
 
 import javax.inject.Inject;
 
-import xicom.com.baselibrary.UtilitySingleton;
+import xicom.com.baselibrary.UtilityClass;
 
 /**
  * Created by sanidhya on 6/5/16.
@@ -17,7 +17,7 @@ import xicom.com.baselibrary.UtilitySingleton;
 public class BaseFragment extends Fragment {
     public Activity context;
     @Inject
-    public UtilitySingleton utilitySingleton;
+    public UtilityClass utilityClass;
 
     @Override
     public void onAttach(Context context) {
@@ -31,6 +31,6 @@ public class BaseFragment extends Fragment {
         super.onCreate(savedInstanceState);
         AppApplication appApplication = (AppApplication) context.getApplication();
         appApplication.diComponent.inject(this);
-        utilitySingleton.setContext(context);
+        utilityClass.setContext(context);
     }
 }
