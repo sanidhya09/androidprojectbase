@@ -68,7 +68,7 @@ LocationUtil.with(context).location().stop();
 ````
       
                 
-```        
+````java      
 // To get the human readable address
 List<Address> address = LocationUtil.with(context).location().state().getAddress(location.getLatitude(), location.getLongitude());
         
@@ -89,34 +89,64 @@ LocationUtil.with(context).location().state().isPassiveAvailable();
         
 // Check if the location is mocked
 LocationUtil.with(context).location().state().isMockSettingEnabled();
-```
+````
 
 ##### 2. For RestServices RetroFit2 :
 
-```
+
+````java
    // initializes retrofit service in application class or via dependency injection (To be initialized once)
-      RetroFitUtil retroFitUtil = RetroFitUtil.INSTANCE;
-      retroFitUtil.setBaseUrl("base URL goes here. Eg https://");
+              Headers.Builder builder = new Headers.Builder();
+              builder.add("OS", "ANDROID");
+      
+              RetrofitConfigModel retrofitConfigModel = new RetrofitConfigModel.Builder()
+                      .setBaseUrl(API_URL)
+                      .setConnectOutTime(60)
+                      .setReadOutTime(45)
+                      .setLoggingEnabled(true)
+                      .setHeaders(builder)
+                      .build();
+      
+              RetroFitSingleton.INSTANCE.setRetrofitConfig(retrofitConfigModel);
   
    // create your own RestService class
-     RestService restService = retroFitUtil.getRetrofit().create(RestService.class);
+     RestService restService = RetroFitSingleton.INSTANCE.getRetrofit().create(RestService.class);
      
      // download large files
      retroFitUtil.downloadLargeFile("https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf", "file name", "file extension", this);
-```
+     
+     // Multiple Image upload request generator
+     // Pass this requestMap to @PartMap in rest service interface.
+     Map<String, RequestBody> requestMap = uploadImagesRequestGenerator(fileArray, file extension, keyParam);
+````
 
-##### 3. UtilitySingleton for rapid development:
+##### 3. UtilityClass for rapid development:
 
-```
-    // To check internet connection
-    isOnline();
+1. Check internet connection
+````java
+isOnline();
+````
 
-    // To uncompress zip file
-    decompressZipFile(appname, fileName, password);
+2. Uncompress zip file
+````java
+decompressZipFile(appname, fileName, password);
+````
 
-    // To validate email
-    validateEmail(edittext);
-```
+3. Validate email
+````java
+validateEmail(edittext);
+````
+
+4. Get String path from URI
+````java
+    getPath(uri, context);
+````
+
+5. Hide Soft Keyboard
+````java
+hideSoftKeyboard(view)
+````
+
 LICENSE
 ----
 

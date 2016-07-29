@@ -10,21 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d87444f0-5d42-45aa-be78-832f5ef364d6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/RetrofitConfigModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilitySingleton.java" afterPath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilityClass.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/RetroFitUtil.java" afterPath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/RetroFitSingleton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/activities/AppSettings.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/activities/AppSettings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/core/AppApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/core/AppApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/core/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/core/BaseActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/core/BaseFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/core/BaseFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/core/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/core/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/dependencyinjection/DiModule.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/dependencyinjection/DiModule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/fragments/FragmentA.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/fragments/FragmentA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/base/network/RestService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/base/network/RestService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/FileDownloadService.java" afterPath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/FileDownloadService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/baselibrary/baselibrary.iml" afterPath="$PROJECT_DIR$/baselibrary/baselibrary.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilityClass.java" afterPath="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilityClass.java" />
     </list>
     <ignored path="androidprojectbase.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,17 +46,22 @@
     <favorites_list name="androidprojectbase" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/core/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5091938">
-              <caret line="175" column="8" selection-start-line="175" selection-start-column="8" selection-end-line="175" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4995#5026#0" expanded="true" />
-                <element signature="e#5044#5076#0" expanded="true" />
-              </folding>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider editor-type-id="MarkdownFxPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor vertical-scroll-proportion="0.91730475">
+                <caret line="137" column="24" selection-start-line="137" selection-start-column="24" selection-end-line="137" selection-end-column="24" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -75,18 +70,21 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/core/AppApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+              <caret line="43" column="82" selection-start-line="43" selection-start-column="82" selection-end-line="43" selection-end-column="82" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RestService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/network/RestService.java">
+      <file leaf-file-name="UtilityClass.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilityClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-              <folding />
+            <state vertical-scroll-proportion="0.49080622">
+              <caret line="75" column="32" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#decompressZipFile#0;class#UtilityClass#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2871,7 +2869,6 @@
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/locations/LocationProviderInterface.java" />
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/locations/LocationUtil.java" />
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/locations/LocationState.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/geofencing/OnGeofencingTransitionListener.java" />
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/geofencing/utils/Logger.java" />
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/geofencing/utils/GooglePlayServicesListener.java" />
@@ -2888,12 +2885,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/base/activities/LocationActivity.java" />
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/RetroFitUtil.java" />
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/RetrofitConfigModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/base/core/AppApplication.java" />
-        <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilityClass.java" />
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/FileDownloadService.java" />
         <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/RetroFitSingleton.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/base/network/RestService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/base/core/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/base/core/AppApplication.java" />
+        <option value="$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilityClass.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -2926,7 +2924,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2937,6 +2936,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3034,10 +3034,6 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="baselibrary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -3120,54 +3116,18 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidprojectbase" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidprojectbase" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="network" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/sdk" />
     <property name="settings.editor.selected.configurable" value="com.genymobile.genymotion.ide.idea.GdmSettings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="Retro&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/RetroFitSingleton.java&#10;Uti&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/UtilityClass.java&#10;App&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/AppApplication.java&#10;Main&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/MainActivity.java&#10;Utili&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/UtilityClass.java&#10;LocationA&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/activities/LocationActivity.java&#10;MainAc&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/MainActivity.java&#10;MainA&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/MainActivity.java&#10;Loca&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/activities/LocationActivity.java&#10;LocationAc&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/activities/LocationActivity.java&#10;Geo&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/geofencing/GeoFenceUtil.java&#10;locationA&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/activities/LocationActivity.java&#10;LocationUtil&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/locations/LocationUtil.java&#10;read&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/README.md&#10;Location&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/locations/LocationUtil.java&#10;Locat&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/locations/LocationUtil.java&#10;Locatio&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java&#10;LocationU&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java&#10;Xmpp&#9;PSI&#9;JAVA://xicom.com.baselibrary.XMPPUtil&#10;readme&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/README.md&#10;modu&#9;PSI&#9;JAVA://com.base.dependencyinjection.DiModule&#10;RetroFitUtil&#9;PSI&#9;JAVA://xicom.com.baselibrary.retrofit2.RetroFitUtil" />
+    <property name="SearchEverywhereHistoryKey" value="Uti&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/UtilityClass.java&#10;App&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/AppApplication.java&#10;Readme&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/README.md&#10;Retro&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/RetroFitSingleton.java&#10;Main&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/MainActivity.java&#10;Utili&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/UtilityClass.java&#10;LocationA&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/activities/LocationActivity.java&#10;MainAc&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/MainActivity.java&#10;MainA&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/core/MainActivity.java&#10;Loca&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/activities/LocationActivity.java&#10;LocationAc&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/activities/LocationActivity.java&#10;Geo&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/geofencing/GeoFenceUtil.java&#10;locationA&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/app/src/main/java/com/base/activities/LocationActivity.java&#10;LocationUtil&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/locations/LocationUtil.java&#10;read&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/README.md&#10;Location&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/locations/LocationUtil.java&#10;Locat&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/locations/LocationUtil.java&#10;Locatio&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java&#10;LocationU&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/baselibrary/src/main/java/xicom/com/baselibrary/LocationUtil.java&#10;Xmpp&#9;PSI&#9;JAVA://xicom.com.baselibrary.XMPPUtil&#10;readme&#9;FILE&#9;file:///home/sanidhya/clonned_projects/androidprojectbase/README.md&#10;modu&#9;PSI&#9;JAVA://com.base.dependencyinjection.DiModule&#10;RetroFitUtil&#9;PSI&#9;JAVA://xicom.com.baselibrary.retrofit2.RetroFitUtil" />
     <property name="device.picker.selection" value="192.168.56.101:5555" />
     <property name="DEBUGGABLE_DEVICE" value="genymotion-google_nexus_5___5_1_0___api_22___1080x1920-192.168.56.101:5555" />
     <property name="DEBUGGABLE_PROCESS" value="com.base" />
@@ -3516,7 +3476,6 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28084832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -3529,6 +3488,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -3605,14 +3565,37 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/core/AppApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="74" selection-start-line="27" selection-start-column="8" selection-end-line="38" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/core/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4995#5026#0" expanded="true" />
-            <element signature="e#5044#5076#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3635,7 +3618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3657,7 +3639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.2390382">
           <caret line="32" column="20" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3729,7 +3710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38896745">
           <caret line="151" column="5" selection-start-line="151" selection-start-column="5" selection-end-line="151" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3737,7 +3717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2545969">
           <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3745,22 +3724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6181047">
           <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.82082695">
-            <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -3804,10 +3767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2545968">
           <caret line="77" column="36" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
-          <folding>
-            <element signature="e#2045#2046#0" expanded="false" />
-            <element signature="e#2117#2118#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3825,7 +3784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2036775">
           <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3833,7 +3791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2291372">
           <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3853,9 +3810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28005657">
           <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3863,7 +3817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30551627">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3871,7 +3824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30551627">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3879,7 +3831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.407355">
           <caret line="66" column="54" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3887,10 +3838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3069307">
           <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding>
-            <element signature="e#1909#1910#0" expanded="false" />
-            <element signature="e#1952#1953#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3902,21 +3849,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilityClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6181047">
-          <caret line="135" column="32" selection-start-line="135" selection-start-column="32" selection-end-line="135" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/retrofit2/FileDownloadService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33097595">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3932,28 +3868,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/network/RestService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.15275814">
           <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/core/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8910891">
+          <caret line="175" column="8" selection-start-line="175" selection-start-column="8" selection-end-line="175" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/core/AppApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+          <caret line="43" column="82" selection-start-line="43" selection-start-column="82" selection-end-line="43" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/base/core/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.91730475">
+            <caret line="137" column="24" selection-start-line="137" selection-start-column="24" selection-end-line="137" selection-end-column="24" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselibrary/src/main/java/xicom/com/baselibrary/UtilityClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5091938">
-          <caret line="175" column="8" selection-start-line="175" selection-start-column="8" selection-end-line="175" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.49080622">
+          <caret line="75" column="32" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4995#5026#0" expanded="true" />
-            <element signature="e#5044#5076#0" expanded="true" />
+            <element signature="method#decompressZipFile#0;class#UtilityClass#0" expanded="false" />
           </folding>
         </state>
       </provider>
