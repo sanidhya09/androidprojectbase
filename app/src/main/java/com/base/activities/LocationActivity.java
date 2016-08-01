@@ -11,10 +11,10 @@ import android.widget.Toast;
 
 import com.base.R;
 
-import xicom.com.baselibrary.geofencing.OnGeofencingTransitionListener;
-import xicom.com.baselibrary.geofencing.SmartLocation;
-import xicom.com.baselibrary.geofencing.model.GeofenceModel;
-import xicom.com.baselibrary.geofencing.utils.TransitionGeofence;
+import xicom.com.baselibrary.geofencing.Constants;
+import xicom.com.baselibrary.geofencing.GeoFenceUtil;
+import xicom.com.baselibrary.geofencing.GeofenceModel;
+import xicom.com.baselibrary.geofencing.OnGeofenceStatusListener;
 import xicom.com.baselibrary.locations.LocationConfig;
 import xicom.com.baselibrary.locations.LocationUtil;
 import xicom.com.baselibrary.locations.OnLocationUpdatedListener;
@@ -64,49 +64,47 @@ public class LocationActivity extends BaseActivity {
         mRequestingLocationUpdates = false;
         mLastUpdateTime = "";
 
-        GeofenceModel mestalla = new GeofenceModel.Builder("id_mestalla")
-                .setTransition(Geofence.GEOFENCE_TRANSITION_EXIT)
+        GeofenceModel janakpuri = new GeofenceModel.Builder("janakpuri")
+                .setTransition(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT)
                 .setLatitude(28.621127)
                 .setLongitude(77.081824)
-                .setRadius(150)
+                .setRadius(2000)
+                .setExpiration(Constants.GEOFENCE_EXPIRATION_IN_MILLISECONDS)
                 .build();
 
-        SmartLocation.with(context).geofencing()
-                .add(mestalla)
-                .start(new OnGeofencingTransitionListener() {
-                    @Override
-                    public void onGeofenceTransition(TransitionGeofence transitionGeofence) {
-                        GeofenceModel geofenceModel = transitionGeofence.getGeofenceModel();
-                        Toast.makeText(context, "Entered", Toast.LENGTH_LONG).show();
-                        Log.i("1", "Entered geofence");
-                        mLastUpdateTimeTextView.setText("Exit geofence");
-                    }
-                });
+        GeoFenceUtil.INSTANCE.add(janakpuri).init(this).setOnGeoFenceStatusListener(new OnGeofenceStatusListener() {
+            @Override
+            public void onStatus(String id, int transitionType, Location location) {
+                Log.i(TAG, id + " " + transitionType);
+                mLastUpdateTimeTextView.setText("Geofence = " + transitionType);
+            }
+        });
 
+        // GeoFenceUtil.INSTANCE.removeGeofence();
     }
 
     public void startUpdatesButtonHandler(View view) {
-            setButtonsEnabledState();
+        setButtonsEnabledState();
 
-            LocationConfig locationConfig = new LocationConfig();
-            locationConfig.setInterval(5000).setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        LocationConfig locationConfig = new LocationConfig();
+        locationConfig.setInterval(5000).setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
-            LocationUtil.with(context).location().setConfig(locationConfig).start(new OnLocationUpdatedListener() {
-                @Override
-                public void getLocation(Location location) {
-                    mLatitudeTextView.setText(String.format("%s: %f", mLatitudeLabel,
-                            location.getLatitude()));
-                    mLongitudeTextView.setText(String.format("%s: %f", mLongitudeLabel,
-                            location.getLongitude()));
-                    List<Address> address = LocationUtil.with(context).location().state().getAddress(location.getLatitude(), location.getLongitude());
-                    mLastUpdateTimeTextView.setText(address.get(0).getAddressLine(0));
-                }
-            });
+        LocationUtil.with(context).location().setConfig(locationConfig).start(new OnLocationUpdatedListener() {
+            @Override
+            public void getLocation(Location location) {
+                mLatitudeTextView.setText(String.format("%s: %f", mLatitudeLabel,
+                        location.getLatitude()));
+                mLongitudeTextView.setText(String.format("%s: %f", mLongitudeLabel,
+                        location.getLongitude()));
+                List<Address> address = LocationUtil.with(context).location().state().getAddress(location.getLatitude(), location.getLongitude());
+                mLastUpdateTimeTextView.setText(address.get(0).getAddressLine(0));
+            }
+        });
     }
 
     public void stopUpdatesButtonHandler(View view) {
-            setButtonsEnabledState();
-            LocationUtil.with(context).location().stop();
+        setButtonsEnabledState();
+        LocationUtil.with(context).location().stop();
     }
 
 
@@ -128,4 +126,11 @@ public class LocationActivity extends BaseActivity {
 //        mLongitudeTextView.setText(String.format("%s: %f", mLongitudeLabel,
 //                location.getLongitude()));
 //    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        GeoFenceUtil.INSTANCE.removeGeofence();
+    }
 }

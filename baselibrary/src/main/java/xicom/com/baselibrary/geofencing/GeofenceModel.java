@@ -1,4 +1,4 @@
-package xicom.com.baselibrary.geofencing.model;
+package xicom.com.baselibrary.geofencing;
 
 import com.google.android.gms.location.Geofence;
 
@@ -58,7 +58,7 @@ public class GeofenceModel {
                 .setExpirationDuration(expiration)
                 .setRequestId(requestId)
                 .setTransitionTypes(transition)
-                .setLoiteringDelay(loiteringDelay)
+                //.setLoiteringDelay(loiteringDelay)
                 .build();
     }
 
