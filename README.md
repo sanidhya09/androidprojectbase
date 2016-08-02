@@ -91,11 +91,54 @@ LocationUtil.with(context).location().state().isPassiveAvailable();
 LocationUtil.with(context).location().state().isMockSettingEnabled();
 ````
 
-##### 2. For RestServices RetroFit2 :
+##### 2. Geofencing :
+
+ GeofenceUtil helps in monitoring the geofences. we can define single as well as multiple geofences to monitor.
+
+### Starting
+
+For Single Geofence
+
+````java
+   GeofenceModel janakpuri = new GeofenceModel.Builder("id_janakpuri") // this id should be unique for every GeofenceModel
+                .setTransition(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT)
+                .setLatitude(28.621127)
+                .setLongitude(77.081824)
+                .setRadius(2000)
+                .setExpiration(6000000)
+                .build();
+                
+        GeoFenceUtil.INSTANCE.add(janakpuri).init(this).setOnGeoFenceStatusListener(new OnGeofenceStatusListener() {
+            @Override
+            public void onStatus(String id, int transitionType, Location location) {
+                Log.i(TAG, id + " " + transitionType);
+            }
+        });
+````
+
+For Multiple Geofence
+
+````java
+        GeoFenceUtil.INSTANCE.add(address1).add(address2).init(this).setOnGeoFenceStatusListener(new OnGeofenceStatusListener() {
+                    @Override
+                    public void onStatus(String id, int transitionType, Location location) {
+                        Log.i(TAG, id + " " + transitionType);
+                    }
+                });
+````
+
+### Stopping
+
+````java
+GeoFenceUtil.INSTANCE.removeGeofence();
+````
+
+##### 3. For RestServices using RetroFit 2 :
 
 
 ````java
-   // initializes retrofit service in application class or via dependency injection (To be initialized once)
+// initializes retrofit service in application class or via dependency injection (To be initialized once)
+
               Headers.Builder builder = new Headers.Builder();
               builder.add("OS", "ANDROID");
       
@@ -109,7 +152,7 @@ LocationUtil.with(context).location().state().isMockSettingEnabled();
       
               RetroFitSingleton.INSTANCE.setRetrofitConfig(retrofitConfigModel);
   
-   // create your own RestService class
+     // create your own RestService class
      RestService restService = RetroFitSingleton.INSTANCE.getRetrofit().create(RestService.class);
      
      // download large files
@@ -120,7 +163,7 @@ LocationUtil.with(context).location().state().isMockSettingEnabled();
      Map<String, RequestBody> requestMap = uploadImagesRequestGenerator(fileArray, file extension, keyParam);
 ````
 
-##### 3. UtilityClass for rapid development:
+##### 4. UtilityClass for rapid development:
 
 1. Check internet connection
 ````java
