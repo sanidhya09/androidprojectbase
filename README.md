@@ -1,4 +1,4 @@
-Android Project Base
+Android Library with Sample Project
 ====
 
 
@@ -7,7 +7,7 @@ What's this?
 
 It is a ready to start development for an Android app project sample with base library. 
 
-It includes:
+Sample includes:
 
 1. Retrofit 2.0.2 with sample implementation for your rest calls.
 2. Dagger 2 based Dependency Injection with sample UtilitySingleton implementation.
@@ -27,13 +27,13 @@ How to use
 3. Rename the packages as per your need.
 4. Use this project for your application development.
 
-Usage
+Library Usage :
 ----
-##### 1. For Location Services :
+##### 1. For Current Location (One Time/Periodic):
 
 ### Starting
 
-For starting the location service single time:
+For getting current location single time:
 
 ````java
 
@@ -45,7 +45,7 @@ public void getLocation(Location location) {
 });
 ````
 
-For starting the location service (Periodic):
+For getting current location (Periodic):
 
 ````java
 LocationConfig locationConfig = new LocationConfig();
@@ -140,7 +140,7 @@ GeoFenceUtil.INSTANCE.removeGeofence();
 // initializes retrofit service in application class or via dependency injection (To be initialized once)
 
               Headers.Builder builder = new Headers.Builder();
-              builder.add("OS", "ANDROID");
+              builder.add("OS", "ANDROID"); // add common headers here. Optional.
       
               RetrofitConfigModel retrofitConfigModel = new RetrofitConfigModel.Builder()
                       .setBaseUrl(API_URL)
@@ -165,27 +165,27 @@ GeoFenceUtil.INSTANCE.removeGeofence();
 
 ##### 4. UtilityClass for rapid development:
 
-1. Check internet connection
+###### 1. Check internet connection
 ````java
 isOnline();
 ````
 
-2. Uncompress zip file
+###### 2. Decompress zip file
 ````java
 decompressZipFile(appname, fileName, password);
 ````
 
-3. Validate email
+###### 3. Validate email
 ````java
 validateEmail(edittext);
 ````
 
-4. Get String path from URI
+###### 4. Get String path from URI
 ````java
     getPath(uri, context);
 ````
 
-5. Hide Soft Keyboard
+###### 5. Hide Soft Keyboard
 ````java
 hideSoftKeyboard(view)
 ````
